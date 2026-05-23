@@ -100,9 +100,7 @@
     ]
   }
   </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <!-- ÄNDERUNG 1: Google Fonts CDN entfernt → System-Fonts (DSGVO-konform) -->
   <style>
     :root {
       --primary:#7C4D8A; --primary-light:#A06BBF; --accent:#E8839E;
@@ -113,7 +111,7 @@
       --shadow:0 4px 32px rgba(124,77,138,.10);
       --shadow-hover:0 8px 48px rgba(124,77,138,.18);
       --transition:0.28s ease; --container:1100px;
-      --font-serif:'Lora',Georgia,serif; --font-sans:'Inter',system-ui,sans-serif;
+      --font-serif:Georgia,'Times New Roman',serif; --font-sans:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; /* ÄNDERUNG 2: System-Fonts */
     }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
@@ -275,6 +273,10 @@
     .form-field input:focus,.form-field textarea:focus{outline:none;border-color:var(--accent-light);}
     .form-field textarea{resize:vertical;min-height:100px;}
     .form-note{font-size:.82rem;color:rgba(255,255,255,.6);margin-top:-8px;}
+    .form-status{display:none;padding:14px 18px;border-radius:var(--radius-sm);font-size:.9rem;font-weight:600;}
+    .form-status.success{display:block;background:rgba(76,175,80,.2);border:1px solid rgba(76,175,80,.5);color:#a5d6a7;}
+    .form-status.error{display:block;background:rgba(239,83,80,.15);border:1px solid rgba(239,83,80,.4);color:#ffcdd2;}
+    .btn[disabled]{opacity:.6;cursor:not-allowed;transform:none !important;}
 
     /* FOOTER */
     footer{background:var(--text);color:rgba(255,255,255,.7);padding:48px 0 32px;}
@@ -524,6 +526,8 @@
           <span data-i18n="donate_paypal_btn">Jetzt für Lea spenden</span>
         </a>
         <p style="margin-top:16px;font-size:.88rem;" data-i18n-html="donate_paypal_note">Empfänger: <strong>Anita Herter</strong> · PayPal: A.patalas@hotmail.com<br />Kein PayPal-Konto? Auch Zahlung per Kreditkarte möglich.</p>
+        <!-- ÄNDERUNG 3: Pflichthinweis – private Spende, nicht steuerlich absetzbar -->
+        <p style="margin-top:14px;padding:12px 16px;background:#fff8e1;border-radius:8px;border-left:3px solid #f39c12;font-size:.82rem;color:#5a4a00;text-align:left;" data-i18n="donate_disclaimer">⚠ Hinweis: Diese Spende geht direkt an Anita Herter als Privatperson. Es handelt sich um eine freiwillige Zuwendung ohne steuerliche Abzugsmöglichkeit. Es wird keine Spendenquittung ausgestellt.</p>
       </div>
     </div>
     <div class="share-section">
@@ -577,7 +581,7 @@
         <p data-i18n="contact_p1">Du hast Fragen zu Leas Geschichte? Du selbst bist Elternteil eines Kindes mit NUSAP1-Mutation? Du möchtest helfen, weißt aber nicht wie? Schreib uns.</p>
         <p data-i18n="contact_p2">Gemeinsam sind wir stärker. Gemeinsam können wir Lea mehr Chancen schenken.</p>
       </div>
-      <form class="contact-form" onsubmit="handleFormSubmit(event)" novalidate>
+      <form class="contact-form" id="contact-form" novalidate>
         <div class="form-row">
           <div class="form-field"><label for="name" data-i18n="form_name_label">Name</label><input type="text" id="name" name="name" data-i18n-placeholder="form_name_ph" placeholder="Dein Name" autocomplete="name" /></div>
           <div class="form-field"><label for="email" data-i18n="form_email_label">E-Mail</label><input type="email" id="email" name="email" data-i18n-placeholder="form_email_ph" placeholder="deine@email.de" autocomplete="email" /></div>
@@ -585,6 +589,7 @@
         <div class="form-field"><label for="message" data-i18n="form_msg_label">Nachricht</label><textarea id="message" name="message" data-i18n-placeholder="form_msg_ph" placeholder="Deine Nachricht …"></textarea></div>
         <p class="form-note" data-i18n="form_note">Deine Daten werden vertraulich behandelt und nicht weitergegeben.</p>
         <button type="submit" class="btn btn-accent" style="align-self:flex-start;" data-i18n="form_submit">Nachricht senden ✉</button>
+        <div class="form-status" id="form-status" role="alert" aria-live="polite"></div>
       </form>
     </div>
   </div>
@@ -626,19 +631,17 @@
 <div class="modal-overlay" id="modal-impressum" onclick="closeModalOutside(event,'impressum')">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('impressum')">&times;</button>
+    <!-- ÄNDERUNG 4: Impressum erweitert -->
     <h2 data-i18n="modal_impressum_title">Impressum</h2>
-    <p><strong data-i18n="modal_impressum_law">Angaben gemäß § 5 TMG</strong></p>
-    <p>Familie Herter<br />Braunschweiger Str. 26<br />38165 Lehre<br />Deutschland</p>
-    <p><strong data-i18n="modal_impressum_contact_title">Kontakt</strong><br />E-Mail: <a href="mailto:m.herter.ovb@gmail.com">m.herter.ovb@gmail.com</a></p>
+    <div data-i18n-html="modal_impressum_html"></div>
   </div>
 </div>
 <div class="modal-overlay" id="modal-datenschutz" onclick="closeModalOutside(event,'datenschutz')">
   <div class="modal">
     <button class="modal-close" onclick="closeModal('datenschutz')">&times;</button>
+    <!-- ÄNDERUNG 5: Datenschutzerklärung vollständig nach DSGVO Art. 13 -->
     <h2 data-i18n="modal_datenschutz_title">Datenschutzerklärung</h2>
-    <p data-i18n="modal_datenschutz_p1">Diese Website erhebt keine personenbezogenen Daten außer denjenigen, die freiwillig über das Kontaktformular übermittelt werden.</p>
-    <p data-i18n="modal_datenschutz_p2">Es werden keine Tracking-Cookies, Analyse-Dienste oder Social-Media-Pixel verwendet.</p>
-    <p><span data-i18n="modal_datenschutz_contact">Für Datenschutzfragen:</span> <a href="mailto:m.herter.ovb@gmail.com">m.herter.ovb@gmail.com</a></p>
+    <div data-i18n-html="modal_datenschutz_html"></div>
   </div>
 </div>
 
@@ -737,11 +740,11 @@ const T = {
     footer_nav:"Navigation", footer_legal:"Rechtliches",
     footer_impressum:"Impressum", footer_datenschutz:"Datenschutz",
     footer_copyright:"© 2026 Familie Herter · Erstellt mit Liebe für ein besonderes Mädchen",
-    modal_impressum_title:"Impressum", modal_impressum_law:"Angaben gemäß § 5 TMG", modal_impressum_contact_title:"Kontakt",
+    modal_impressum_title:"Impressum",
+    modal_impressum_html:"<strong>Angaben gem&auml;&szlig; &sect; 5 TMG</strong><br><br>Familie Herter<br>Braunschweiger Str. 26<br>38165 Lehre<br>Deutschland<br><br><strong>Kontakt</strong><br>E-Mail: <a href="mailto:m.herter.ovb@gmail.com">m.herter.ovb@gmail.com</a><br>Telefon: <a href="tel:+491734753321">+49 173 4753321</a><br><br><strong>Hosting</strong><br>Diese Website wird &uuml;ber GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) betrieben.<br><br><strong>EU-Streitschlichtung</strong><br>Die EU-Kommission stellt eine Plattform zur Online-Streitbeilegung bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Wir sind nicht verpflichtet und nicht bereit, an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.<br><br><strong>Spendenhinweis</strong><br>Diese Seite wird von einer Privatperson betrieben. Spenden gehen direkt an Anita Herter als Privatperson und sind <em>nicht steuerlich absetzbar</em>. Es wird keine Zuwendungsbest&auml;tigung ausgestellt.",
     modal_datenschutz_title:"Datenschutzerklärung",
-    modal_datenschutz_p1:"Diese Website erhebt keine personenbezogenen Daten außer denjenigen, die freiwillig über das Kontaktformular übermittelt werden.",
-    modal_datenschutz_p2:"Es werden keine Tracking-Cookies, Analyse-Dienste oder Social-Media-Pixel verwendet.",
-    modal_datenschutz_contact:"Für Datenschutzfragen:",
+    modal_datenschutz_html:"<h3 style="margin:16px 0 6px;font-size:1rem;">1. Verantwortliche Person</h3><p>Familie Herter, Braunschweiger Str. 26, 38165 Lehre, Deutschland<br>E-Mail: <a href="mailto:m.herter.ovb@gmail.com">m.herter.ovb@gmail.com</a></p><h3 style="margin:16px 0 6px;font-size:1rem;">2. Hosting &mdash; GitHub Pages</h3><p>Diese Website wird &uuml;ber <strong>GitHub Pages</strong> (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) betrieben. Beim Seitenaufruf &uuml;bermittelt dein Browser automatisch IP-Adresse, Datum/Uhrzeit und Browser-Typ an GitHub-Server in den USA. GitHub ist unter dem <a href="https://www.dataprivacyframework.gov/" target="_blank" rel="noopener">EU-US Data Privacy Framework</a> zertifiziert. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am fehlerfreien Betrieb).</p><h3 style="margin:16px 0 6px;font-size:1rem;">3. Kontaktformular</h3><p>Wenn du das Formular nutzt, &ouml;ffnet sich dein E-Mail-Programm mit den eingetragenen Daten (Name, E-Mail-Adresse, Nachricht) als vorausgef&uuml;llte E-Mail. Beim Absenden werden diese Daten direkt an uns &uuml;bermittelt &mdash; ohne Zwischendienste oder Drittanbieter. Speicherdauer: bis zur abschlie&szlig;enden Bearbeitung deiner Anfrage. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p><h3 style="margin:16px 0 6px;font-size:1rem;">4. Externe Dienste</h3><p><strong>PayPal:</strong> Der Spendenlink f&uuml;hrt direkt zur externen Website von PayPal Inc. (2211 North First Street, San Jose, CA 95131, USA, DPF-zertifiziert). Wir selbst &uuml;bermitteln dabei keine Daten an PayPal. Datenschutzerkl&auml;rung PayPal: <a href="https://paypal.com/de/privacy" target="_blank" rel="noopener">paypal.com/de/privacy</a></p><p><strong>WhatsApp / Facebook:</strong> Die Teilen-Schaltfl&auml;chen sind reine Links. Wir laden keine externen Skripte dieser Anbieter.</p><h3 style="margin:16px 0 6px;font-size:1rem;">5. Kein Tracking, keine Cookies</h3><p>Es werden keine Tracking-Cookies gesetzt und keine Analyse-Dienste verwendet. Deine Spracheinstellung und der Cookie-Hinweis-Status werden ausschlie&szlig;lich im lokalen Browser-Speicher (localStorage) gespeichert &mdash; ohne Personenbezug.</p><h3 style="margin:16px 0 6px;font-size:1rem;">6. Deine Rechte (DSGVO)</h3><p>Du hast das Recht auf: Auskunft (Art. 15), Berichtigung (Art. 16), L&ouml;schung (Art. 17), Einschr&auml;nkung der Verarbeitung (Art. 18), Daten&uuml;bertragbarkeit (Art. 20), Widerspruch (Art. 21 DSGVO).</p><p>Beschwerderecht bei der zust&auml;ndigen Aufsichtsbeh&ouml;rde:<br><strong>Landesbeauftragte f&uuml;r den Datenschutz Niedersachsen</strong><br>Prinzenstra&szlig;e 5, 30159 Hannover &mdash; <a href="https://lfd.niedersachsen.de" target="_blank" rel="noopener">lfd.niedersachsen.de</a></p><p>Kontakt Datenschutz: <a href="mailto:m.herter.ovb@gmail.com">m.herter.ovb@gmail.com</a></p>",
+    donate_disclaimer:"⚠ Hinweis: Diese Spende geht direkt an Anita Herter als Privatperson. Es handelt sich um eine freiwillige Zuwendung ohne steuerliche Abzugsmöglichkeit. Es wird keine Spendenquittung ausgestellt.",
     cookie_text:"Diese Seite verwendet keine Tracking-Cookies. Technische Einstellungen werden lokal gespeichert. <a href='#' onclick='openModal(\"datenschutz\")'>Mehr erfahren</a>",
     cookie_accept:"Verstanden", cookie_decline:"Schließen"
   },
@@ -826,11 +829,11 @@ const T = {
     footer_nav:"Navigation", footer_legal:"Legal",
     footer_impressum:"Legal Notice", footer_datenschutz:"Privacy Policy",
     footer_copyright:"© 2026 Familie Herter · Created with love for a special girl",
-    modal_impressum_title:"Legal Notice", modal_impressum_law:"Information pursuant to § 5 TMG", modal_impressum_contact_title:"Contact",
+    modal_impressum_title:"Legal Notice",
+    modal_impressum_html:"<strong>Information pursuant to &sect; 5 TMG (German Telemedia Act)</strong><br><br>Familie Herter<br>Braunschweiger Str. 26<br>38165 Lehre<br>Germany<br><br><strong>Contact</strong><br>Email: <a href="mailto:m.herter.ovb@gmail.com">m.herter.ovb@gmail.com</a><br>Phone: <a href="tel:+491734753321">+49 173 4753321</a><br><br><strong>Hosting</strong><br>This website is hosted via GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA).<br><br><strong>EU Dispute Resolution</strong><br>The European Commission provides a platform for online dispute resolution: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. We are not obliged and not willing to participate in dispute settlement proceedings before a consumer arbitration board.<br><br><strong>Donation Notice</strong><br>This site is run by a private individual. Donations go directly to Anita Herter as a private person and are <em>not tax-deductible</em>. No donation receipt will be issued.",
     modal_datenschutz_title:"Privacy Policy",
-    modal_datenschutz_p1:"This website does not collect personal data other than that voluntarily submitted via the contact form.",
-    modal_datenschutz_p2:"No tracking cookies, analytics services or social media pixels are used.",
-    modal_datenschutz_contact:"For privacy questions:",
+    modal_datenschutz_html:"<h3 style="margin:16px 0 6px;font-size:1rem;">1. Controller</h3><p>Familie Herter, Braunschweiger Str. 26, 38165 Lehre, Germany<br>Email: <a href="mailto:m.herter.ovb@gmail.com">m.herter.ovb@gmail.com</a></p><h3 style="margin:16px 0 6px;font-size:1rem;">2. Hosting &mdash; GitHub Pages</h3><p>This website is hosted via <strong>GitHub Pages</strong> (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). When you visit this site, your browser automatically transmits your IP address, date/time and browser type to GitHub servers in the USA. GitHub is certified under the <a href="https://www.dataprivacyframework.gov/" target="_blank" rel="noopener">EU-US Data Privacy Framework</a>. Legal basis: Art. 6(1)(f) GDPR.</p><h3 style="margin:16px 0 6px;font-size:1rem;">3. Contact Form</h3><p>If you use the contact form, your email app will open with the entered data (name, email address, message) pre-filled. When you send the email, this data is transmitted directly to us &mdash; without any intermediary services or third parties. Retention period: until your enquiry is fully resolved. Legal basis: Art. 6(1)(f) GDPR.</p><h3 style="margin:16px 0 6px;font-size:1rem;">4. Third-Party Services</h3><p><strong>PayPal:</strong> The donation link leads directly to the external website of PayPal Inc. (2211 North First Street, San Jose, CA 95131, USA, DPF-certified). We do not transmit any data to PayPal ourselves. PayPal privacy policy: <a href="https://paypal.com/privacy" target="_blank" rel="noopener">paypal.com/privacy</a></p><p><strong>WhatsApp / Facebook:</strong> The sharing buttons are plain links only. We do not load any external scripts from these providers.</p><h3 style="margin:16px 0 6px;font-size:1rem;">5. No Tracking, No Cookies</h3><p>No tracking cookies are set and no analytics services are used. Your language preference and cookie-notice status are stored exclusively in your browser's local storage (localStorage) &mdash; without any personal reference.</p><h3 style="margin:16px 0 6px;font-size:1rem;">6. Your Rights (GDPR)</h3><p>You have the right to: access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20), objection (Art. 21 GDPR).</p><p>Right to lodge a complaint with the supervisory authority:<br><strong>Landesbeauftragte f&uuml;r den Datenschutz Niedersachsen</strong><br>Prinzenstra&szlig;e 5, 30159 Hannover &mdash; <a href="https://lfd.niedersachsen.de" target="_blank" rel="noopener">lfd.niedersachsen.de</a></p><p>Privacy contact: <a href="mailto:m.herter.ovb@gmail.com">m.herter.ovb@gmail.com</a></p>",
+    donate_disclaimer:"⚠ Notice: This donation goes directly to Anita Herter as a private individual. It is a voluntary contribution with no tax deduction option. No donation receipt will be issued.",
     cookie_text:"This site uses no tracking cookies. Technical settings are stored locally. <a href='#' onclick='openModal(\"datenschutz\")'>Learn more</a>",
     cookie_accept:"Understood", cookie_decline:"Close"
   },
@@ -915,11 +918,11 @@ const T = {
     footer_nav:"Nawigacja", footer_legal:"Prawne",
     footer_impressum:"Impressum", footer_datenschutz:"Polityka prywatności",
     footer_copyright:"© 2026 Rodzina Herter · Stworzone z miłością dla wyjątkowej dziewczynki",
-    modal_impressum_title:"Impressum", modal_impressum_law:"Dane zgodnie z § 5 TMG", modal_impressum_contact_title:"Kontakt",
+    modal_impressum_title:"Impressum",
+    modal_impressum_html:"<strong>Dane zgodnie z &sect; 5 TMG (niemiecka ustawa o mediach telekomunikacyjnych)</strong><br><br>Familie Herter<br>Braunschweiger Str. 26<br>38165 Lehre<br>Niemcy<br><br><strong>Kontakt</strong><br>E-mail: <a href="mailto:m.herter.ovb@gmail.com">m.herter.ovb@gmail.com</a><br>Telefon: <a href="tel:+491734753321">+49 173 4753321</a><br><br><strong>Hosting</strong><br>Strona jest hostowana przez GitHub Pages (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA).<br><br><strong>Platforma ODR (Rozstrzyganie spor&oacute;w online)</strong><br>Komisja Europejska udost&#281;pnia platform&#281; do internetowego rozstrzygania spor&oacute;w: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener">ec.europa.eu/consumers/odr</a>. Nie jeste&#347;my zobowi&#261;zani ani nie zamierzamy uczestniczy&#263; w post&#281;powaniu przed podmiotem zajmuj&#261;cym si&#281; pozas&#261;dowym rozwi&#261;zywaniem spor&oacute;w konsumenckich.<br><br><strong>Informacja o darowi&#378;nie</strong><br>Strona jest prowadzona przez osob&#281; prywatn&#261;. Darowizny trafiaj&#261; bezpo&#347;rednio do Anity Herter jako osoby prywatnej i <em>nie podlegaj&#261; odliczeniu podatkowemu</em>. Potwierdzenie darowizny nie b&#281;dzie wystawiane.",
     modal_datenschutz_title:"Polityka prywatności",
-    modal_datenschutz_p1:"Ta strona nie zbiera danych osobowych poza tymi, które są dobrowolnie przekazywane przez formularz kontaktowy.",
-    modal_datenschutz_p2:"Nie są używane pliki cookie śledzące, usługi analityczne ani piksele mediów społecznościowych.",
-    modal_datenschutz_contact:"W przypadku pytań dotyczących ochrony danych:",
+    modal_datenschutz_html:"<h3 style="margin:16px 0 6px;font-size:1rem;">1. Administrator danych</h3><p>Familie Herter, Braunschweiger Str. 26, 38165 Lehre, Niemcy<br>E-mail: <a href="mailto:m.herter.ovb@gmail.com">m.herter.ovb@gmail.com</a></p><h3 style="margin:16px 0 6px;font-size:1rem;">2. Hosting &mdash; GitHub Pages</h3><p>Strona jest hostowana przez <strong>GitHub Pages</strong> (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). Podczas wizyty przegl&#261;darka automatycznie przesy&#322;a do serwer&oacute;w GitHub Tw&oacute;j adres IP, dat&#281;/godzin&#281; i typ przegl&#261;darki. GitHub posiada certyfikat <a href="https://www.dataprivacyframework.gov/" target="_blank" rel="noopener">EU-US Data Privacy Framework</a>. Podstawa prawna: Art. 6 ust. 1 lit. f RODO.</p><h3 style="margin:16px 0 6px;font-size:1rem;">3. Formularz kontaktowy</h3><p>Korzystaj&#261;c z formularza, Twoja aplikacja pocztowa otworzy si&#281; z wprowadzonymi danymi (imi&#281;, adres e-mail, wiadomo&#347;&#263;) jako wst&#281;pnie wype&#322;niona wiadomo&#347;&#263;. Po wys&#322;aniu dane s&#261; przesy&#322;ane bezpo&#347;rednio do nas &mdash; bez po&#347;rednik&oacute;w ani stron trzecich. Okres przechowywania: do zako&#324;czenia obs&#322;ugi zapytania. Podstawa prawna: Art. 6 ust. 1 lit. f RODO.</p><h3 style="margin:16px 0 6px;font-size:1rem;">4. Us&#322;ugi zewn&#281;trzne</h3><p><strong>PayPal:</strong> Link do darowizny prowadzi bezpo&#347;rednio na zewn&#281;trzn&#261; stron&#281; PayPal Inc. (2211 North First Street, San Jose, CA 95131, USA, certyfikat DPF). Sami nie przesy&#322;amy danych do PayPal. Polityka prywatno&#347;ci PayPal: <a href="https://paypal.com/privacy" target="_blank" rel="noopener">paypal.com/privacy</a></p><p><strong>WhatsApp / Facebook:</strong> Przyciski udost&#281;pniania to zwyk&#322;e linki. Nie &#322;adujemy &#380;adnych zewn&#281;trznych skrypt&oacute;w tych dostawc&oacute;w.</p><h3 style="margin:16px 0 6px;font-size:1rem;">5. Brak plik&oacute;w cookie i &#347;ledzenia</h3><p>Nie s&#261; u&#380;ywane pliki cookie do &#347;ledzenia ani us&#322;ugi analityczne. Wyb&oacute;r j&#281;zyka i status powiadomienia o plikach cookie s&#261; przechowywane wy&#322;&#261;cznie w lokalnym magazynie przegl&#261;darki (localStorage) &mdash; bez odniesienia do Twojej osoby.</p><h3 style="margin:16px 0 6px;font-size:1rem;">6. Twoje prawa (RODO)</h3><p>Przys&#322;uguj&#261; Ci prawa do: dost&#281;pu (Art. 15), sprostowania (Art. 16), usuni&#281;cia (Art. 17), ograniczenia przetwarzania (Art. 18), przenoszenia danych (Art. 20), sprzeciwu (Art. 21 RODO).</p><p>Prawo do wniesienia skargi do organu nadzorczego:<br><strong>Landesbeauftragte f&uuml;r den Datenschutz Niedersachsen</strong><br>Prinzenstra&szlig;e 5, 30159 Hannover &mdash; <a href="https://lfd.niedersachsen.de" target="_blank" rel="noopener">lfd.niedersachsen.de</a></p><p>Kontakt ds. ochrony danych: <a href="mailto:m.herter.ovb@gmail.com">m.herter.ovb@gmail.com</a></p>",
+    donate_disclaimer:"⚠ Uwaga: Ta darowizna trafia bezpośrednio do Anity Herter jako osoby prywatnej. Jest to dobrowolna wpłata bez możliwości odliczenia podatkowego. Potwierdzenie darowizny nie zostanie wystawione.",
     cookie_text:"Ta strona nie używa plików cookie do śledzenia. Ustawienia techniczne są przechowywane lokalnie. <a href='#' onclick='openModal(\"datenschutz\")'>Dowiedz się więcej</a>",
     cookie_accept:"Rozumiem", cookie_decline:"Zamknij"
   }
@@ -963,6 +966,7 @@ function setLang(lang) {
     if (isActive) btns[b].classList.add('active');
     else btns[b].classList.remove('active');
   }
+  updateFormLang(lang);
 }
 
 // ── NAV ──────────────────────────────────────────────────────────
@@ -1013,10 +1017,30 @@ function copyPageLink(btn) {
 }
 
 // ── FORM ──────────────────────────────────────────────────────────
-function handleFormSubmit(e) {
-  e.preventDefault();
-  alert('Bitte ersetze dieses Formular durch formspree.io oder einen ähnlichen Dienst.');
-}
+(function() {
+  var MAIL_TO = 'm.herter.ovb@gmail.com';
+  var form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    var l = document.documentElement.lang || 'de';
+    if (l !== 'en' && l !== 'pl') l = 'de';
+    var name    = (form.querySelector('#name').value    || '').trim();
+    var email   = (form.querySelector('#email').value   || '').trim();
+    var message = (form.querySelector('#message').value || '').trim();
+    var subjects = {de:'Kontaktanfrage lea-herter.com', en:'Contact request lea-herter.com', pl:'Zapytanie kontaktowe lea-herter.com'};
+    var body = (name  ? (l==='de'?'Name: ':l==='pl'?'Imię: ':'Name: ')    + name    + '\n' : '')
+             + (email ? (l==='de'?'E-Mail: ':'E-Mail: ')                   + email   + '\n' : '')
+             + (message ? '\n' + message : '');
+    window.location.href = 'mailto:' + MAIL_TO
+      + '?subject=' + encodeURIComponent(subjects[l])
+      + '&body='    + encodeURIComponent(body);
+    var status = document.getElementById('form-status');
+    var ok = {de:'Dein E-Mail-Programm wurde geöffnet — einfach absenden!', en:'Your email app has opened — just hit send!', pl:'Twoja aplikacja pocztowa została otwarta — wyślij wiadomość!'};
+    status.className = 'form-status success';
+    status.textContent = ok[l];
+  });
+})();
 
 // ── INIT ──────────────────────────────────────────────────────────
 (function() {
