@@ -243,6 +243,26 @@
     .paypal-area p{font-size:.9rem;color:var(--text-muted);margin-bottom:16px;}
     .paypal-btn{display:inline-flex;align-items:center;gap:10px;background:#0070BA;color:var(--white);padding:16px 40px;border-radius:50px;font-weight:700;font-size:1.1rem;transition:all var(--transition);text-decoration:none;}
     .paypal-btn:hover{background:#005EA6;color:var(--white);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,112,186,.3);}
+    .donate-tabs{display:flex;gap:6px;flex-wrap:wrap;border-bottom:2px solid #f0e6ff;margin-bottom:0;padding-bottom:0;}
+    .donate-tab-btn{flex:1;min-width:110px;padding:11px 14px;border:none;background:none;cursor:pointer;font-size:.88rem;font-weight:600;color:var(--text-muted);border-bottom:3px solid transparent;margin-bottom:-2px;transition:all var(--transition);border-radius:8px 8px 0 0;white-space:nowrap;}
+    .donate-tab-btn.active{color:var(--primary);border-bottom-color:var(--primary);background:#fdf4fb;}
+    .donate-tab-btn:hover:not(.active){color:var(--primary);background:#fdf8ff;}
+    .donate-tab-pane{display:none;padding-top:28px;}
+    .donate-tab-pane.active{display:block;}
+    .iban-box{background:#f8f0ff;border-radius:12px;padding:18px 22px;margin:18px 0;text-align:left;}
+    .iban-row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px solid #e8d8f8;gap:12px;}
+    .iban-row:last-child{border-bottom:none;}
+    .iban-label{color:var(--text-muted);font-size:.82rem;min-width:110px;flex-shrink:0;}
+    .iban-value{font-weight:600;color:var(--primary);letter-spacing:.4px;font-size:.92rem;word-break:break-all;}
+    .copy-btn{background:none;border:1px solid var(--primary);color:var(--primary);padding:4px 10px;border-radius:20px;font-size:.73rem;cursor:pointer;transition:all .2s;flex-shrink:0;}
+    .copy-btn:hover{background:var(--primary);color:#fff;}
+    .goodcrowd-btn{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#e91e8c,#9c27b0);color:#fff;padding:16px 40px;border-radius:50px;font-weight:700;font-size:1.1rem;transition:all var(--transition);text-decoration:none;}
+    .goodcrowd-btn:hover{opacity:.9;color:#fff;transform:translateY(-2px);box-shadow:0 8px 24px rgba(156,39,176,.35);}
+    .reveal-bank-btn{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:2px solid var(--primary);color:var(--primary);padding:12px 28px;border-radius:50px;font-weight:700;font-size:.95rem;cursor:pointer;transition:all var(--transition);}
+    .reveal-bank-btn:hover{background:var(--primary);color:#fff;}
+    .stripe-placeholder{background:#f4f3ff;border:2px dashed #635bff44;border-radius:12px;padding:28px;text-align:center;}
+    .stripe-placeholder .stripe-logo{font-size:1.5rem;font-weight:800;letter-spacing:-1px;color:#635bff;margin-bottom:12px;}
+    .stripe-coming{display:inline-block;background:#635bff22;color:#635bff;padding:6px 18px;border-radius:20px;font-size:.85rem;font-weight:600;margin-top:16px;}
     .share-section{text-align:center;margin-top:40px;padding:32px;background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);}
     .share-section p{margin-bottom:20px;color:var(--text-muted);}
     .share-buttons{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
@@ -513,22 +533,74 @@
       <p class="lead" data-i18n="section_donate_lead">Die Therapien, die Lea vorankommen lassen, werden von der Krankenkasse nicht vollständig übernommen. Jede Spende macht einen echten Unterschied.</p>
     </div>
     <div class="donate-cards">
-      <div class="donate-card"><div class="donate-amount">25 €</div><div class="donate-label" data-i18n="dc1_label">Eine Therapiestunde Ergotherapie – Leas Hände lernen greifen</div><a href="#donate-paypal" class="btn btn-outline" style="font-size:.88rem;padding:10px 20px;" data-i18n="dc1_btn">Spenden</a></div>
-      <div class="donate-card featured"><div class="donate-amount">50 €</div><div class="donate-label" data-i18n="dc2_label">Zwei Therapiestunden oder spezielles Hilfsmittel für die Entwicklung</div><a href="#donate-paypal" class="btn btn-accent" style="font-size:.88rem;padding:10px 20px;" data-i18n="dc2_btn">Spenden</a></div>
-      <div class="donate-card"><div class="donate-amount">100 €</div><div class="donate-label" data-i18n="dc3_label">Vier Stunden Intensivtherapie – ein bedeutender Schritt vorwärts</div><a href="#donate-paypal" class="btn btn-outline" style="font-size:.88rem;padding:10px 20px;" data-i18n="dc3_btn">Spenden</a></div>
+      <div class="donate-card"><div class="donate-amount">25 €</div><div class="donate-label" data-i18n="dc1_label">Eine Therapiestunde Ergotherapie – Leas Hände lernen greifen</div><a href="#donate-methods" class="btn btn-outline" style="font-size:.88rem;padding:10px 20px;" data-i18n="dc1_btn">Spenden</a></div>
+      <div class="donate-card featured"><div class="donate-amount">50 €</div><div class="donate-label" data-i18n="dc2_label">Zwei Therapiestunden oder spezielles Hilfsmittel für die Entwicklung</div><a href="#donate-methods" class="btn btn-accent" style="font-size:.88rem;padding:10px 20px;" data-i18n="dc2_btn">Spenden</a></div>
+      <div class="donate-card"><div class="donate-amount">100 €</div><div class="donate-label" data-i18n="dc3_label">Vier Stunden Intensivtherapie – ein bedeutender Schritt vorwärts</div><a href="#donate-methods" class="btn btn-outline" style="font-size:.88rem;padding:10px 20px;" data-i18n="dc3_btn">Spenden</a></div>
     </div>
-    <div class="donate-box" id="donate-paypal">
-      <h3 data-i18n="donate_box_title">♥ Jetzt sicher über PayPal spenden</h3>
-      <p style="color:var(--text-muted);margin-bottom:28px;font-size:.95rem;" data-i18n="donate_box_text">Deine Spende geht direkt an Anita Herter – Leas Familie – und wird vollständig für Leas Therapien verwendet.</p>
-      <div class="paypal-area">
-        <a href="https://www.paypal.com/paypalme/AnitaHerter" class="paypal-btn" target="_blank" rel="noopener noreferrer">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.59 3.025-2.566 4.643-5.813 4.643h-1.722a.667.667 0 00-.658.563l-.955 6.05-.27 1.722a.35.35 0 00.346.4h2.438c.46 0 .85-.334.922-.788l.731-4.63a.932.932 0 01.921-.789h.581c3.759 0 6.7-1.528 7.557-5.946.36-1.845.173-3.387-.677-4.486z"/></svg>
-          <span data-i18n="donate_paypal_btn">Jetzt für Lea spenden</span>
-        </a>
-        <p style="margin-top:16px;font-size:.88rem;" data-i18n-html="donate_paypal_note">Empfänger: <strong>Anita Herter</strong> · PayPal: A.patalas@hotmail.com<br />Kein PayPal-Konto? Auch Zahlung per Kreditkarte möglich.</p>
-        <!-- ÄNDERUNG 3: Pflichthinweis – private Spende, nicht steuerlich absetzbar -->
-        <p style="margin-top:14px;padding:12px 16px;background:#fff8e1;border-radius:8px;border-left:3px solid #f39c12;font-size:.82rem;color:#5a4a00;text-align:left;" data-i18n="donate_disclaimer">⚠ Hinweis: Es handelt sich um eine freiwillige Zuwendung ohne steuerliche Abzugsmöglichkeit. Es wird keine Spendenquittung ausgestellt.</p>
+    <div class="donate-box" id="donate-methods">
+      <p style="color:var(--text-muted);margin-bottom:24px;font-size:.95rem;" data-i18n="donate_box_text">Deine Spende geht direkt an Anita Herter – Leas Familie – und wird vollständig für Leas Therapien verwendet.</p>
+      <!-- TABS -->
+      <div class="donate-tabs">
+        <button class="donate-tab-btn active" onclick="showDonateTab('crowd',this)" data-i18n="donate_tab_crowd">🌟 GoodCrowd</button>
+        <button class="donate-tab-btn" onclick="showDonateTab('bank',this)" data-i18n="donate_tab_bank">🏦 Überweisung</button>
+        <button class="donate-tab-btn" onclick="showDonateTab('paypal',this)" data-i18n="donate_tab_paypal">💙 PayPal</button>
       </div>
+
+      <!-- TAB: GoodCrowd -->
+      <div class="donate-tab-pane active" id="tab-crowd">
+        <div style="text-align:center;">
+          <p style="color:var(--text-muted);font-size:.95rem;margin-bottom:24px;" data-i18n="donate_crowd_text">Unterstütze Lea über unsere GoodCrowd-Kampagne – teile sie und hilf uns, noch mehr Menschen zu erreichen.</p>
+          <a href="https://www.goodcrowd.org/leas-therapie" class="goodcrowd-btn" target="_blank" rel="noopener noreferrer">
+            <span>🌟</span>
+            <span data-i18n="donate_crowd_btn">Zur GoodCrowd-Kampagne</span>
+          </a>
+          <p style="margin-top:16px;font-size:.85rem;color:var(--text-muted);" data-i18n="donate_crowd_note">Auf GoodCrowd kannst du auch mit Kreditkarte, Apple Pay und Google Pay spenden.</p>
+        </div>
+      </div>
+
+      <!-- TAB: Banküberweisung -->
+      <div class="donate-tab-pane" id="tab-bank">
+        <p style="color:var(--text-muted);font-size:.92rem;margin-bottom:16px;" data-i18n="donate_bank_text">Überweise direkt auf das Konto der Familie – kostenlos, sicher, ohne Drittanbieter.</p>
+        <div style="text-align:center;margin-bottom:12px;">
+          <button class="reveal-bank-btn" id="reveal-bank-btn" onclick="revealBankDetails()" data-i18n="donate_bank_reveal">🔒 Kontodaten anzeigen</button>
+        </div>
+        <div class="iban-box" id="bank-details" style="display:none;">
+          <div class="iban-row">
+            <span class="iban-label" data-i18n="donate_bank_recipient">Empfänger</span>
+            <span class="iban-value">Anita Herter</span>
+            <button class="copy-btn" onclick="copyText('Anita Herter',this)" data-i18n="copy_btn">Kopieren</button>
+          </div>
+          <div class="iban-row">
+            <span class="iban-label">IBAN</span>
+            <span class="iban-value">DE32 5001 0517 5440 5107 87</span>
+            <button class="copy-btn" onclick="copyText('DE32500105175440510787',this)" data-i18n="copy_btn">Kopieren</button>
+          </div>
+          <div class="iban-row">
+            <span class="iban-label">BIC</span>
+            <span class="iban-value">INGDDEFFXXX</span>
+            <button class="copy-btn" onclick="copyText('INGDDEFFXXX',this)" data-i18n="copy_btn">Kopieren</button>
+          </div>
+          <div class="iban-row">
+            <span class="iban-label" data-i18n="donate_bank_purpose">Verwendungszweck</span>
+            <span class="iban-value" data-i18n="donate_bank_purpose_val">Spende für Lea</span>
+            <button class="copy-btn" onclick="copyText('Spende für Lea',this)" data-i18n="copy_btn">Kopieren</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: PayPal -->
+      <div class="donate-tab-pane" id="tab-paypal">
+        <div class="paypal-area">
+          <a href="https://www.paypal.com/paypalme/AnitaHerter" class="paypal-btn" target="_blank" rel="noopener noreferrer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M7.076 21.337H2.47a.641.641 0 01-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 00-.607-.541c-.59 3.025-2.566 4.643-5.813 4.643h-1.722a.667.667 0 00-.658.563l-.955 6.05-.27 1.722a.35.35 0 00.346.4h2.438c.46 0 .85-.334.922-.788l.731-4.63a.932.932 0 01.921-.789h.581c3.759 0 6.7-1.528 7.557-5.946.36-1.845.173-3.387-.677-4.486z"/></svg>
+            <span data-i18n="donate_paypal_btn">Jetzt für Lea spenden</span>
+          </a>
+          <p style="margin-top:16px;font-size:.88rem;" data-i18n-html="donate_paypal_note">Empfänger: <strong>Anita Herter</strong> · PayPal: A.patalas@hotmail.com<br />Kein PayPal-Konto? Auch Zahlung per Kreditkarte, Apple Pay &amp; Google Pay möglich.</p>
+        </div>
+      </div>
+
+      <!-- Disclaimer -->
+      <p style="margin-top:22px;padding:12px 16px;background:#fff8e1;border-radius:8px;border-left:3px solid #f39c12;font-size:.82rem;color:#5a4a00;text-align:left;" data-i18n="donate_disclaimer">⚠ Hinweis: Es handelt sich um eine freiwillige Zuwendung ohne steuerliche Abzugsmöglichkeit. Es wird keine Spendenquittung ausgestellt.</p>
     </div>
     <div class="share-section">
       <h3 data-i18n="share_title">Auch ohne Spende kannst du helfen</h3>
@@ -619,6 +691,7 @@
     </div>
     <div class="footer-bottom">
       <p data-i18n="footer_copyright">© 2026 Familie Herter · Erstellt mit Liebe für ein besonderes Mädchen</p>
+      <p style="margin-top:6px;font-size:.85rem;"><a href="https://www.HWaiHub.com" target="_blank" rel="noopener noreferrer" style="color:inherit;opacity:.7;text-decoration:none;transition:opacity .2s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7">www.HWaiHub.com</a></p>
       <div class="footer-links">
         <a href="#" onclick="openModal('impressum');return false;" data-i18n="footer_impressum">Impressum</a>
         <a href="#" onclick="openModal('datenschutz');return false;" data-i18n="footer_datenschutz">Datenschutz</a>
@@ -745,6 +818,23 @@ const T = {
     modal_datenschutz_title:"Datenschutzerklärung",
     modal_datenschutz_html:"<h3 style='margin:16px 0 6px;font-size:1rem;'>1. Verantwortliche Person</h3><p>Familie Herter, Braunschweiger Str. 26, 38165 Lehre, Deutschland<br>E-Mail: <a href='mailto:m.herter.ovb@gmail.com'>m.herter.ovb@gmail.com</a></p><h3 style='margin:16px 0 6px;font-size:1rem;'>2. Hosting &mdash; GitHub Pages</h3><p>Diese Website wird &uuml;ber <strong>GitHub Pages</strong> (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA) betrieben. Beim Seitenaufruf &uuml;bermittelt dein Browser automatisch IP-Adresse, Datum/Uhrzeit und Browser-Typ an GitHub-Server in den USA. GitHub ist unter dem <a href='https://www.dataprivacyframework.gov/' target='_blank' rel='noopener'>EU-US Data Privacy Framework</a> zertifiziert. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am fehlerfreien Betrieb).</p><h3 style='margin:16px 0 6px;font-size:1rem;'>3. Kontaktformular</h3><p>Wenn du das Formular nutzt, &ouml;ffnet sich dein E-Mail-Programm mit den eingetragenen Daten (Name, E-Mail-Adresse, Nachricht) als vorausgef&uuml;llte E-Mail. Beim Absenden werden diese Daten direkt an uns &uuml;bermittelt &mdash; ohne Zwischendienste oder Drittanbieter. Speicherdauer: bis zur abschlie&szlig;enden Bearbeitung deiner Anfrage. Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO.</p><h3 style='margin:16px 0 6px;font-size:1rem;'>4. Externe Dienste</h3><p><strong>PayPal:</strong> Der Spendenlink f&uuml;hrt direkt zur externen Website von PayPal Inc. (2211 North First Street, San Jose, CA 95131, USA, DPF-zertifiziert). Wir selbst &uuml;bermitteln dabei keine Daten an PayPal. Datenschutzerkl&auml;rung PayPal: <a href='https://paypal.com/de/privacy' target='_blank' rel='noopener'>paypal.com/de/privacy</a></p><p><strong>WhatsApp / Facebook:</strong> Die Teilen-Schaltfl&auml;chen sind reine Links. Wir laden keine externen Skripte dieser Anbieter.</p><h3 style='margin:16px 0 6px;font-size:1rem;'>5. Kein Tracking, keine Cookies</h3><p>Es werden keine Tracking-Cookies gesetzt und keine Analyse-Dienste verwendet. Deine Spracheinstellung und der Cookie-Hinweis-Status werden ausschlie&szlig;lich im lokalen Browser-Speicher (localStorage) gespeichert &mdash; ohne Personenbezug.</p><h3 style='margin:16px 0 6px;font-size:1rem;'>6. Deine Rechte (DSGVO)</h3><p>Du hast das Recht auf: Auskunft (Art. 15), Berichtigung (Art. 16), L&ouml;schung (Art. 17), Einschr&auml;nkung der Verarbeitung (Art. 18), Daten&uuml;bertragbarkeit (Art. 20), Widerspruch (Art. 21 DSGVO).</p><p>Beschwerderecht bei der zust&auml;ndigen Aufsichtsbeh&ouml;rde:<br><strong>Landesbeauftragte f&uuml;r den Datenschutz Niedersachsen</strong><br>Prinzenstra&szlig;e 5, 30159 Hannover &mdash; <a href='https://lfd.niedersachsen.de' target='_blank' rel='noopener'>lfd.niedersachsen.de</a></p><p>Kontakt Datenschutz: <a href='mailto:m.herter.ovb@gmail.com'>m.herter.ovb@gmail.com</a></p>",
     donate_disclaimer:"⚠ Hinweis: Es handelt sich um eine freiwillige Zuwendung ohne steuerliche Abzugsmöglichkeit. Es wird keine Spendenquittung ausgestellt.",
+    donate_tab_paypal:"💙 PayPal",
+    donate_tab_card:"💳 Kreditkarte",
+    donate_tab_bank:"🏦 Überweisung",
+    donate_tab_crowd:"🌟 GoodCrowd",
+    donate_card_text:"Direkte Kreditkartenzahlung über Stripe – sicher & ohne Konto.",
+    donate_card_coming:"⚙ Zahlungslink wird gerade eingerichtet – in Kürze verfügbar.",
+    donate_card_badge:"Kommt bald",
+    donate_card_alt:"Alternativ: Kreditkartenzahlung bereits jetzt über PayPal möglich (kein PayPal-Konto nötig).",
+    donate_bank_reveal:"🔒 Kontodaten anzeigen",
+    donate_bank_text:"Überweise direkt auf das Konto der Familie – kostenlos, sicher, ohne Drittanbieter.",
+    donate_bank_recipient:"Empfänger",
+    donate_bank_purpose:"Verwendungszweck",
+    donate_bank_purpose_val:"Spende für Lea",
+    copy_btn:"Kopieren",
+    donate_crowd_text:"Unterstütze Lea über unsere GoodCrowd-Kampagne – teile sie und hilf uns, noch mehr Menschen zu erreichen.",
+    donate_crowd_btn:"Zur GoodCrowd-Kampagne",
+    donate_crowd_note:"Auf GoodCrowd kannst du auch mit Kreditkarte spenden und die Kampagne teilen.",
     cookie_text:"Diese Seite verwendet keine Tracking-Cookies. Technische Einstellungen werden lokal gespeichert. <a href='#' onclick='openModal(\"datenschutz\");return false;'>Mehr erfahren</a>",
     cookie_accept:"Verstanden", cookie_decline:"Schließen"
   },
@@ -806,7 +896,7 @@ const T = {
     donate_box_title:"♥ Donate safely via PayPal",
     donate_box_text:"Your donation goes directly to Anita Herter – Lea's family – and is used entirely for Lea's therapies.",
     donate_paypal_btn:"Donate for Lea now",
-    donate_paypal_note:"Recipient: <strong>Anita Herter</strong> · PayPal: A.patalas@hotmail.com<br />No PayPal account? Credit card payment also possible.",
+    donate_paypal_note:"Recipient: <strong>Anita Herter</strong> · PayPal: A.patalas@hotmail.com<br />No PayPal account? Credit card, Apple Pay &amp; Google Pay also possible.",
     share_title:"You can also help without donating",
     share_text:"Share Lea's story. Every shared page can reach someone who wants to help.",
     share_wa:"📱 WhatsApp", share_fb:"👥 Facebook", share_copy:"🔗 Copy link",
@@ -834,6 +924,23 @@ const T = {
     modal_datenschutz_title:"Privacy Policy",
     modal_datenschutz_html:"<h3 style='margin:16px 0 6px;font-size:1rem;'>1. Controller</h3><p>Familie Herter, Braunschweiger Str. 26, 38165 Lehre, Germany<br>Email: <a href='mailto:m.herter.ovb@gmail.com'>m.herter.ovb@gmail.com</a></p><h3 style='margin:16px 0 6px;font-size:1rem;'>2. Hosting &mdash; GitHub Pages</h3><p>This website is hosted via <strong>GitHub Pages</strong> (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). When you visit this site, your browser automatically transmits your IP address, date/time and browser type to GitHub servers in the USA. GitHub is certified under the <a href='https://www.dataprivacyframework.gov/' target='_blank' rel='noopener'>EU-US Data Privacy Framework</a>. Legal basis: Art. 6(1)(f) GDPR.</p><h3 style='margin:16px 0 6px;font-size:1rem;'>3. Contact Form</h3><p>If you use the contact form, your email app will open with the entered data (name, email address, message) pre-filled. When you send the email, this data is transmitted directly to us &mdash; without any intermediary services or third parties. Retention period: until your enquiry is fully resolved. Legal basis: Art. 6(1)(f) GDPR.</p><h3 style='margin:16px 0 6px;font-size:1rem;'>4. Third-Party Services</h3><p><strong>PayPal:</strong> The donation link leads directly to the external website of PayPal Inc. (2211 North First Street, San Jose, CA 95131, USA, DPF-certified). We do not transmit any data to PayPal ourselves. PayPal privacy policy: <a href='https://paypal.com/privacy' target='_blank' rel='noopener'>paypal.com/privacy</a></p><p><strong>WhatsApp / Facebook:</strong> The sharing buttons are plain links only. We do not load any external scripts from these providers.</p><h3 style='margin:16px 0 6px;font-size:1rem;'>5. No Tracking, No Cookies</h3><p>No tracking cookies are set and no analytics services are used. Your language preference and cookie-notice status are stored exclusively in your browser's local storage (localStorage) &mdash; without any personal reference.</p><h3 style='margin:16px 0 6px;font-size:1rem;'>6. Your Rights (GDPR)</h3><p>You have the right to: access (Art. 15), rectification (Art. 16), erasure (Art. 17), restriction of processing (Art. 18), data portability (Art. 20), objection (Art. 21 GDPR).</p><p>Right to lodge a complaint with the supervisory authority:<br><strong>Landesbeauftragte f&uuml;r den Datenschutz Niedersachsen</strong><br>Prinzenstra&szlig;e 5, 30159 Hannover &mdash; <a href='https://lfd.niedersachsen.de' target='_blank' rel='noopener'>lfd.niedersachsen.de</a></p><p>Privacy contact: <a href='mailto:m.herter.ovb@gmail.com'>m.herter.ovb@gmail.com</a></p>",
     donate_disclaimer:"⚠ Notice: It is a voluntary contribution with no tax deduction option. No donation receipt will be issued.",
+    donate_tab_paypal:"💙 PayPal",
+    donate_tab_card:"💳 Credit Card",
+    donate_tab_bank:"🏦 Bank Transfer",
+    donate_tab_crowd:"🌟 GoodCrowd",
+    donate_card_text:"Direct credit card payment via Stripe – secure & no account needed.",
+    donate_card_coming:"⚙ Payment link is being set up – available soon.",
+    donate_card_badge:"Coming soon",
+    donate_card_alt:"Alternative: Credit card payment already available via PayPal (no PayPal account required).",
+    donate_bank_reveal:"🔒 Show bank details",
+    donate_bank_text:"Transfer directly to the family's bank account – free, secure, no third party.",
+    donate_bank_recipient:"Recipient",
+    donate_bank_purpose:"Reference",
+    donate_bank_purpose_val:"Donation for Lea",
+    copy_btn:"Copy",
+    donate_crowd_text:"Support Lea through our GoodCrowd campaign – share it and help us reach even more people.",
+    donate_crowd_btn:"Go to GoodCrowd Campaign",
+    donate_crowd_note:"On GoodCrowd you can also donate by credit card and share the campaign.",
     cookie_text:"This site uses no tracking cookies. Technical settings are stored locally. <a href='#' onclick='openModal(\"datenschutz\");return false;'>Learn more</a>",
     cookie_accept:"Understood", cookie_decline:"Close"
   },
@@ -895,7 +1002,7 @@ const T = {
     donate_box_title:"♥ Przekaż darowiznę bezpiecznie przez PayPal",
     donate_box_text:"Twoja darowizna trafia bezpośrednio do Anity Herter – rodziny Lei – i jest w całości przeznaczona na terapie Lei.",
     donate_paypal_btn:"Przekaż darowiznę dla Lei",
-    donate_paypal_note:"Odbiorca: <strong>Anita Herter</strong> · PayPal: A.patalas@hotmail.com<br />Nie masz konta PayPal? Możliwa jest również płatność kartą kredytową.",
+    donate_paypal_note:"Odbiorca: <strong>Anita Herter</strong> · PayPal: A.patalas@hotmail.com<br />Nie masz konta PayPal? Możliwa jest również płatność kartą, Apple Pay i Google Pay.",
     share_title:"Możesz pomóc też bez darowizny",
     share_text:"Udostępnij historię Lei. Każda udostępniona strona może dotrzeć do kogoś, kto chce pomóc.",
     share_wa:"📱 WhatsApp", share_fb:"👥 Facebook", share_copy:"🔗 Kopiuj link",
@@ -923,6 +1030,23 @@ const T = {
     modal_datenschutz_title:"Polityka prywatności",
     modal_datenschutz_html:"<h3 style='margin:16px 0 6px;font-size:1rem;'>1. Administrator danych</h3><p>Familie Herter, Braunschweiger Str. 26, 38165 Lehre, Niemcy<br>E-mail: <a href='mailto:m.herter.ovb@gmail.com'>m.herter.ovb@gmail.com</a></p><h3 style='margin:16px 0 6px;font-size:1rem;'>2. Hosting &mdash; GitHub Pages</h3><p>Strona jest hostowana przez <strong>GitHub Pages</strong> (GitHub Inc., 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA). Podczas wizyty przegl&#261;darka automatycznie przesy&#322;a do serwer&oacute;w GitHub Tw&oacute;j adres IP, dat&#281;/godzin&#281; i typ przegl&#261;darki. GitHub posiada certyfikat <a href='https://www.dataprivacyframework.gov/' target='_blank' rel='noopener'>EU-US Data Privacy Framework</a>. Podstawa prawna: Art. 6 ust. 1 lit. f RODO.</p><h3 style='margin:16px 0 6px;font-size:1rem;'>3. Formularz kontaktowy</h3><p>Korzystaj&#261;c z formularza, Twoja aplikacja pocztowa otworzy si&#281; z wprowadzonymi danymi (imi&#281;, adres e-mail, wiadomo&#347;&#263;) jako wst&#281;pnie wype&#322;niona wiadomo&#347;&#263;. Po wys&#322;aniu dane s&#261; przesy&#322;ane bezpo&#347;rednio do nas &mdash; bez po&#347;rednik&oacute;w ani stron trzecich. Okres przechowywania: do zako&#324;czenia obs&#322;ugi zapytania. Podstawa prawna: Art. 6 ust. 1 lit. f RODO.</p><h3 style='margin:16px 0 6px;font-size:1rem;'>4. Us&#322;ugi zewn&#281;trzne</h3><p><strong>PayPal:</strong> Link do darowizny prowadzi bezpo&#347;rednio na zewn&#281;trzn&#261; stron&#281; PayPal Inc. (2211 North First Street, San Jose, CA 95131, USA, certyfikat DPF). Sami nie przesy&#322;amy danych do PayPal. Polityka prywatno&#347;ci PayPal: <a href='https://paypal.com/privacy' target='_blank' rel='noopener'>paypal.com/privacy</a></p><p><strong>WhatsApp / Facebook:</strong> Przyciski udost&#281;pniania to zwyk&#322;e linki. Nie &#322;adujemy &#380;adnych zewn&#281;trznych skrypt&oacute;w tych dostawc&oacute;w.</p><h3 style='margin:16px 0 6px;font-size:1rem;'>5. Brak plik&oacute;w cookie i &#347;ledzenia</h3><p>Nie s&#261; u&#380;ywane pliki cookie do &#347;ledzenia ani us&#322;ugi analityczne. Wyb&oacute;r j&#281;zyka i status powiadomienia o plikach cookie s&#261; przechowywane wy&#322;&#261;cznie w lokalnym magazynie przegl&#261;darki (localStorage) &mdash; bez odniesienia do Twojej osoby.</p><h3 style='margin:16px 0 6px;font-size:1rem;'>6. Twoje prawa (RODO)</h3><p>Przys&#322;uguj&#261; Ci prawa do: dost&#281;pu (Art. 15), sprostowania (Art. 16), usuni&#281;cia (Art. 17), ograniczenia przetwarzania (Art. 18), przenoszenia danych (Art. 20), sprzeciwu (Art. 21 RODO).</p><p>Prawo do wniesienia skargi do organu nadzorczego:<br><strong>Landesbeauftragte f&uuml;r den Datenschutz Niedersachsen</strong><br>Prinzenstra&szlig;e 5, 30159 Hannover &mdash; <a href='https://lfd.niedersachsen.de' target='_blank' rel='noopener'>lfd.niedersachsen.de</a></p><p>Kontakt ds. ochrony danych: <a href='mailto:m.herter.ovb@gmail.com'>m.herter.ovb@gmail.com</a></p>",
     donate_disclaimer:"⚠ Uwaga: Jest to dobrowolna wpłata bez możliwości odliczenia podatkowego. Potwierdzenie darowizny nie zostanie wystawione.",
+    donate_tab_paypal:"💙 PayPal",
+    donate_tab_card:"💳 Karta kredytowa",
+    donate_tab_bank:"🏦 Przelew",
+    donate_tab_crowd:"🌟 GoodCrowd",
+    donate_card_text:"Bezpośrednia płatność kartą kredytową przez Stripe – bezpiecznie i bez konta.",
+    donate_card_coming:"⚙ Link do płatności jest konfigurowany – dostępny wkrótce.",
+    donate_card_badge:"Wkrótce",
+    donate_card_alt:"Alternatywnie: płatność kartą kredytową już teraz przez PayPal (bez konta PayPal).",
+    donate_bank_reveal:"🔒 Pokaż dane bankowe",
+    donate_bank_text:"Przelej bezpośrednio na konto rodziny – bezpłatnie, bezpiecznie, bez pośredników.",
+    donate_bank_recipient:"Odbiorca",
+    donate_bank_purpose:"Tytuł przelewu",
+    donate_bank_purpose_val:"Darowizna dla Lei",
+    copy_btn:"Kopiuj",
+    donate_crowd_text:"Wesprzyj Leę przez naszą kampanię GoodCrowd – udostępnij ją i pomóż nam dotrzeć do jeszcze więcej ludzi.",
+    donate_crowd_btn:"Przejdź do kampanii GoodCrowd",
+    donate_crowd_note:"Na GoodCrowd możesz również wpłacić kartą kredytową i udostępnić kampanię.",
     cookie_text:"Ta strona nie używa plików cookie do śledzenia. Ustawienia techniczne są przechowywane lokalnie. <a href='#' onclick='openModal(\"datenschutz\");return false;'>Dowiedz się więcej</a>",
     cookie_accept:"Rozumiem", cookie_decline:"Zamknij"
   }
@@ -1006,6 +1130,40 @@ document.addEventListener('keydown', function(e) {
 // ── COOKIES ───────────────────────────────────────────────────────
 function acceptCookies() { localStorage.setItem('lea_cookies','accepted'); document.getElementById('cookie-banner').classList.remove('show'); }
 function declineCookies() { localStorage.setItem('lea_cookies','declined'); document.getElementById('cookie-banner').classList.remove('show'); }
+
+// ── DONATE TABS ───────────────────────────────────────────────────
+function revealBankDetails() {
+  var details = document.getElementById('bank-details');
+  var btn = document.getElementById('reveal-bank-btn');
+  var lang = (typeof currentLang !== 'undefined') ? currentLang : 'de';
+  var showLabels = {de:'🔒 Kontodaten anzeigen', en:'🔒 Show bank details', pl:'🔒 Pokaż dane bankowe'};
+  var hideLabels = {de:'🔓 Kontodaten verbergen', en:'🔓 Hide bank details', pl:'🔓 Ukryj dane bankowe'};
+  if (details.style.display === 'none') {
+    details.style.display = 'block';
+    btn.textContent = hideLabels[lang] || hideLabels.de;
+    btn.setAttribute('data-bank-open','1');
+  } else {
+    details.style.display = 'none';
+    btn.textContent = showLabels[lang] || showLabels.de;
+    btn.removeAttribute('data-bank-open');
+  }
+}
+
+function showDonateTab(name, btn) {
+  document.querySelectorAll('.donate-tab-pane').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.donate-tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  var pane = document.getElementById('tab-' + name);
+  if (pane) pane.classList.add('active');
+  if (btn) btn.classList.add('active');
+}
+
+function copyText(text, btn) {
+  navigator.clipboard.writeText(text).then(function() {
+    var orig = btn.textContent;
+    btn.textContent = '✓';
+    setTimeout(function(){ btn.textContent = orig; }, 2000);
+  });
+}
 
 // ── SHARE ─────────────────────────────────────────────────────────
 function copyPageLink(btn) {
