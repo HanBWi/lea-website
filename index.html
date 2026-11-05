@@ -14,13 +14,13 @@
   <meta property="og:title" content="NUSAP1 Gendefekt – Leas Geschichte | Seltene Krankheit, Protein Coding Gen" />
   <meta property="og:description" content="NUSAP1 ist ein seltener Protein-Coding-Genfehler. Lea kämpft täglich gegen Epilepsie und neurologische Entwicklungsstörungen. Jede Spende und jedes Teilen hilft." />
   <meta property="og:url" content="https://lea-herter.com/" />
-  <meta property="og:image" content="https://lea-herter.com/images/Lea_Stuht.jpeg" />
+  <meta property="og:image" content="https://lea-herter.com/images/lea-og.jpg" />
   <meta property="og:locale" content="de_DE" />
   <meta property="og:site_name" content="Lea kämpft – NUSAP1" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="NUSAP1 Gendefekt – Leas Geschichte" />
   <meta name="twitter:description" content="NUSAP1 ist ein seltener Protein-Coding-Genfehler. Lea kämpft täglich. Informiere dich und hilf." />
-  <meta name="twitter:image" content="https://lea-herter.com/images/Lea_Stuht.jpeg" />
+  <meta name="twitter:image" content="https://lea-herter.com/images/lea-og.jpg" />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -174,7 +174,7 @@
     .btn-accent{background:var(--accent);color:var(--white);}
     .btn-accent:hover{background:#d06080;color:var(--white);transform:translateY(-2px);box-shadow:0 8px 24px rgba(232,131,158,.35);}
     .hero-image-wrap{position:relative;}
-    .hero-image-wrap img{width:100%;height:560px;object-fit:cover;object-position:center top;border-radius:24px;box-shadow:var(--shadow-hover);}
+    .hero-image-wrap img{width:100%;height:560px;object-fit:cover;object-position:center 25%;border-radius:24px;box-shadow:var(--shadow-hover);}
     .hero-quote{position:absolute;bottom:-24px;left:-24px;background:var(--white);border-radius:var(--radius);padding:20px 24px;box-shadow:var(--shadow);max-width:280px;border-left:4px solid var(--accent);}
     .hero-quote p{font-family:var(--font-serif);font-style:italic;font-size:.95rem;color:var(--text);margin-bottom:8px;}
     .hero-quote span{font-size:.8rem;color:var(--text-muted);font-weight:500;}
@@ -188,9 +188,9 @@
 
     /* STORY */
     .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
-    .story-images{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
-    .story-images img{width:100%;height:220px;object-fit:cover;border-radius:var(--radius);box-shadow:var(--shadow);}
-    .story-images img:first-child{grid-column:1/-1;height:300px;object-position:center 20%;}
+    .story-images{display:grid;grid-template-columns:1fr 1fr;grid-auto-rows:230px;gap:16px;}
+    .story-images img{width:100%;height:100%;object-fit:cover;object-position:center 30%;border-radius:var(--radius);box-shadow:var(--shadow);}
+    .story-images img:first-child{grid-row:1/3;}
     .section-tag{display:inline-flex;align-items:center;gap:6px;color:var(--primary);font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;}
     .section-tag::before{content:'';display:block;width:20px;height:2px;background:var(--accent);border-radius:2px;}
     .section-title{margin-bottom:24px;}
@@ -227,8 +227,8 @@
     .milestone-date{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:4px;}
     .milestone-content h3{margin-bottom:8px;font-size:1.1rem;}
     .milestone-content p{font-size:.95rem;color:var(--text-muted);margin:0;}
-    .progress-photos{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:48px;}
-    .progress-photos img{width:100%;height:260px;object-fit:cover;object-position:center top;border-radius:var(--radius);box-shadow:var(--shadow);}
+    .progress-photos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:48px;}
+    .progress-photos img{width:100%;aspect-ratio:3/4;height:auto;object-fit:cover;object-position:center 30%;border-radius:var(--radius);box-shadow:var(--shadow);}
 
     /* DONATE */
     .donate-section{background:linear-gradient(135deg,#FFF0F8 0%,#F0E6FF 100%);}
@@ -238,6 +238,21 @@
     .donate-card.featured{border-color:var(--accent);}
     .donate-amount{font-family:var(--font-serif);font-size:2.4rem;font-weight:700;color:var(--primary);margin-bottom:8px;}
     .donate-label{font-size:.9rem;color:var(--text-muted);margin-bottom:16px;line-height:1.5;}
+    .goal-box{background:var(--white);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow-hover);max-width:820px;margin:0 auto 32px;text-align:center;border-top:6px solid var(--accent);}
+    .goal-tag{display:inline-block;background:rgba(232,131,158,.14);color:#B8506E;border-radius:50px;padding:6px 16px;font-size:.8rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;}
+    .goal-amount{font-family:var(--font-serif);font-size:3.4rem;font-weight:700;color:var(--primary);line-height:1.1;margin:12px 0 16px;}
+    .goal-text{max-width:600px;margin:0 auto 28px;color:var(--text);}
+    .goal-calc{display:flex;align-items:stretch;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:20px;}
+    .goal-calc-item{background:var(--bg-section);border-radius:var(--radius-sm);padding:14px 18px;min-width:150px;display:flex;flex-direction:column;gap:4px;}
+    .goal-calc-item strong{font-family:var(--font-serif);font-size:1.4rem;color:var(--primary);}
+    .goal-calc-item span{font-size:.82rem;color:var(--text-muted);line-height:1.35;}
+    .goal-calc-op{align-self:center;font-size:1.4rem;color:var(--text-muted);font-weight:600;}
+    .goal-note{font-size:.9rem;color:var(--text-muted);margin:0;}
+    .funding-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:820px;margin:0 auto 48px;}
+    .funding-card{background:var(--white);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow);}
+    .funding-card.own{border:2px solid var(--accent);}
+    .funding-card h3{font-size:1.05rem;margin-bottom:14px;color:var(--text);}
+    .funding-card ul{margin:0;padding-left:20px;color:var(--text-muted);font-size:.95rem;line-height:1.7;}
     .donate-box{background:var(--white);border-radius:var(--radius);padding:40px;box-shadow:var(--shadow);max-width:680px;margin:0 auto;}
     .donate-box h3{margin-bottom:24px;color:var(--primary);}
     .paypal-area{text-align:center;}
@@ -345,14 +360,19 @@
       .form-row{grid-template-columns:1fr;}
       .footer-top{grid-template-columns:1fr;gap:32px;}
       .footer-bottom{flex-direction:column;text-align:center;}
-      .progress-photos{grid-template-columns:1fr;}
+      .progress-photos{grid-template-columns:repeat(2,1fr);}
+      .funding-grid{grid-template-columns:1fr;}
+      .goal-box{padding:28px 20px;} .goal-amount{font-size:2.6rem;}
+      .goal-calc-op{display:none;} .goal-calc-item{min-width:0;flex:1 1 100%;}
     }
     @media(max-width:540px){
       section{padding:56px 0;}
       .stats-inner{grid-template-columns:1fr 1fr;}
-      .story-images{grid-template-columns:1fr;}
-      .story-images img{height:220px;} .story-images img:first-child{height:260px;}
+      .story-images{grid-auto-rows:180px;gap:12px;}
       .donate-box{padding:28px 20px;} .modal{padding:28px 20px;}
+      .nav-inner{gap:8px;} .nav-logo{font-size:1.1rem;gap:6px;}
+      .nav-inner .lang-switcher{gap:2px;} .nav-inner .lang-btn{padding:4px 5px;font-size:1.1rem;}
+      .nav-inner .lang-btn span.lang-code{display:none;}
     }
     .text-center{text-align:center;}
     .mb-24{margin-bottom:24px;} .mt-24{margin-top:24px;} .mt-40{margin-top:40px;}
@@ -405,16 +425,16 @@
     <div class="hero-content">
       <div class="hero-badge" data-i18n="hero_badge">Seltene Erkrankung · NUSAP1-Gendefekt</div>
       <h1 class="hero-title" data-i18n-html="hero_title">Lea kämpft.<br /><em>Mit allem, was sie hat.</em></h1>
-      <p class="hero-subtitle" data-i18n="hero_subtitle">Im August 2025 kam Lea auf die Welt – ein kleines Mädchen mit einem großen Herzen und einem winzigen Fehler in ihrer DNA, der alles verändert hat. Sie ist noch kein Jahr alt und hat schon mehr gekämpft als die meisten Menschen in einem Leben.</p>
+      <p class="hero-subtitle" data-i18n="hero_subtitle">Im August 2025 kam Lea auf die Welt – ein kleines Mädchen mit einem großen Herzen und einem winzigen Fehler in ihrer DNA, der alles verändert hat. Lea ist jetzt 14 Monate alt – ein Kleinkind, das jeden Tag kämpft, lacht und uns zeigt, was echter Mut bedeutet.</p>
       <div class="hero-actions">
         <a href="#spenden" class="btn btn-accent" data-i18n="hero_btn_donate">♥ Jetzt für Lea spenden</a>
         <a href="#geschichte" class="btn btn-outline" data-i18n="hero_btn_read">Ihre Geschichte lesen</a>
       </div>
     </div>
     <div class="hero-image-wrap">
-      <img src="images/Lea_Stuht.jpeg" alt="Lea" width="560" height="560" fetchpriority="high" />
+      <img src="images/lea-heute.webp" alt="Lea heute – sie sitzt im Sessel und lacht" width="900" height="1200" fetchpriority="high" />
       <div class="hero-quote" aria-hidden="true">
-        <p data-i18n="hero_quote">„Sie ist noch kein Jahr alt und hat schon mehr Mut bewiesen als die meisten von uns."</p>
+        <p data-i18n="hero_quote">„Sie ist 14 Monate alt – und hat mehr Mut bewiesen als die meisten von uns."</p>
         <span data-i18n="hero_quote_by">— Leas Familie</span>
       </div>
     </div>
@@ -424,10 +444,10 @@
 <!-- STATS -->
 <div class="stats-bar">
   <div class="stats-inner">
-    <div class="stat-item"><div class="stat-number">&lt; 1</div><div class="stat-label" data-i18n-html="stat1_label">Jahr alt –<br />und schon so viel erlebt</div></div>
-    <div class="stat-item"><div class="stat-number">~365</div><div class="stat-label" data-i18n-html="stat2_label">Tage Kampf seit<br />der Geburt</div></div>
-    <div class="stat-item"><div class="stat-number">&lt; 50</div><div class="stat-label" data-i18n-html="stat3_label">bekannte Fälle weltweit –<br />NUSAP1 ist extrem selten</div></div>
-    <div class="stat-item"><div class="stat-number">1 ✓</div><div class="stat-label" data-i18n-html="stat4_label">Spielzeug, das Lea<br />heute selbst halten kann</div></div>
+    <div class="stat-item"><div class="stat-number">14</div><div class="stat-label" data-i18n-html="stat1_label">Monate alt –<br />und schon so viel erlebt</div></div>
+    <div class="stat-item"><div class="stat-number">4×</div><div class="stat-label" data-i18n-html="stat2_label">Status epilepticus –<br />lebensbedrohliche Notfälle</div></div>
+    <div class="stat-item"><div class="stat-number">3</div><div class="stat-label" data-i18n-html="stat3_label">betroffene Kinder weltweit bekannt,<br />als Lea ihre Diagnose bekam</div></div>
+    <div class="stat-item"><div class="stat-number">16.000 €</div><div class="stat-label" data-i18n-html="stat4_label">Spendenziel 2027 –<br />vier Therapiewochen in Polen</div></div>
   </div>
 </div>
 
@@ -436,19 +456,24 @@
   <div class="container">
     <div class="story-grid">
       <div class="story-images">
-        <img src="images/Lea_Krankenhaus.jpeg" alt="Lea im Krankenhausbett" loading="lazy" />
-        <img src="images/Lea_Krankenhaus2.jpeg" alt="Lea wird gefüttert" loading="lazy" />
-        <img src="images/Lea_ball.jpeg" alt="Lea in der Therapie" loading="lazy" />
+        <img src="images/lea-geburt.webp" alt="Lea kurz nach der Geburt im August 2025" loading="lazy" />
+        <img src="images/lea-neugeboren.webp" alt="Lea als Neugeborene" loading="lazy" />
+        <img src="images/lea-krankenhaus.webp" alt="Lea schläft im Krankenhausbett" loading="lazy" />
+        <img src="images/lea-krankenhaus-sitzend.webp" alt="Lea sitzt im Krankenhausbett" loading="lazy" />
+        <img src="images/lea-fruehe-therapie.webp" alt="Lea bei einer ihrer ersten Therapien" loading="lazy" />
+        <img src="images/lea-therapie-stehen.webp" alt="Lea lacht beim unterstützten Stehen in der Therapie" loading="lazy" />
+        <img src="images/lea-greift-spielzeug.webp" alt="Lea lacht und stupst ihre bunte Spielzeugkette an" loading="lazy" />
       </div>
       <div class="story-text">
         <div class="section-tag" data-i18n="section_story_tag">Leas Geschichte</div>
         <h2 class="section-title" data-i18n="section_story_title">Ein kleines Leben, das kämpft – von Anfang an</h2>
-        <p data-i18n-html="story_p1">Als Lea im August 2025 zur Welt kam, ahnten ihre Eltern nicht, was sie in den nächsten Monaten durchstehen würden. Die Diagnose kam wie ein Blitz: <strong>eine de-novo-Mutation im NUSAP1-Gen</strong> – ein Fehler, den weder Mutter noch Vater tragen. Eine Mutation, die spontan entstand. Zufällig. Unbarmherzig.</p>
-        <p data-i18n="story_p2">Dieser winzige Defekt hat Leas Gehirn daran gehindert, sich vollständig zu entwickeln. Die Folgen sind gravierend: Leas Motorik, ihre Kognition, ihre gesamte neurologische Entwicklung schreiten auf einem eigenen, mühsamen Weg voran.</p>
-        <blockquote data-i18n="story_quote">„Fast täglich hat Lea epileptische Anfälle gehabt. Wir sahen zu, wie ihr kleiner Körper zitterte und ihr Gehirn unter Strom gesetzt wurde – immer und immer wieder."</blockquote>
-        <p data-i18n-html="story_p3">Heute bekommt Lea Medikamente, die die Anfälle auf etwa einen pro Woche reduziert haben. Aber diese Medikamente haben <strong>starke Nebenwirkungen</strong>, die Leas kleinen Körper täglich belasten.</p>
-        <p data-i18n="story_p4">Was andere Kinder mühelos tun – sitzen, greifen, sich drehen – ist für Lea eine Welt aus errungenen Zentimetern. Lange konnte sie ihre Hände nicht öffnen. Ihre Fäuste blieben fest geschlossen. Spielzeug greifen? Nicht möglich.</p>
-        <p data-i18n-html="story_p5">Dann kamen die Therapien. Und dann: <span class="highlight">ein Wunder</span>. Langsam öffneten sich ihre Finger. Heute kann Lea ein Spielzeug in der Hand halten. Für uns ist das alles.</p>
+        <p data-i18n-html="story_p1">Lea wurde am 10. August 2025 geboren. Kurz darauf kam die Diagnose: <strong>eine Veränderung im NUSAP1-Gen</strong> – de novo, also bei keinem Elternteil vorhanden, sondern spontan entstanden. Als wir die Diagnose erhielten, waren weltweit nach unserem damaligen Kenntnisstand nur drei betroffene Kinder bekannt.</p>
+        <p data-i18n="story_p2">Selbst die Ärzte konnten uns kaum sagen, wie Leas Zukunft aussehen würde. Ein Neuropädiater sagte uns damals, dass wir Sprechen und Laufen bei Lea vergessen könnten. Doch wir möchten Leas Zukunft nicht allein von einer Prognose bestimmen lassen.</p>
+        <blockquote data-i18n="story_quote">„Leas Anfälle sind unberechenbar – mal hat sie weniger, mal deutlich mehr. Viermal musste sie bereits einen Status epilepticus durchmachen, jedes Mal ein medizinischer Notfall. Die Angst begleitet uns jeden Tag.“</blockquote>
+        <p data-i18n-html="story_p3">Mit sechs Wochen hatte Lea ihre ersten Anfälle. Seitdem verbringt sie viel Zeit im Krankenhaus – für Notfälle, Medikamenteneinstellung und Untersuchungen. <strong>Sechs verschiedene Medikamente</strong> und unterschiedliche Kombinationen wurden bereits ausprobiert.</p>
+        <p data-i18n="story_p4">Mit fast 15 Monaten kann Lea sich noch nicht selbstständig drehen, aufsetzen oder gezielt nach Spielzeug greifen. Doch sie hat schon viel geschafft: Sie kann sitzen, wenn wir sie hinsetzen, und wird beim unterstützten Stehen immer stabiler. Sie brabbelt viel und schafft inzwischen sogar Brei mit kleinen Stückchen.</p>
+        <p data-i18n-html="story_p5">Durch intensive Förderung in Deutschland und Polen sehen wir <span class='highlight'>echte Fortschritte</span>: Ihre Hände, die anfangs stark angespannt waren, kann Lea inzwischen besser öffnen. Am liebsten berührt und schubst sie ihre Spielzeugkette, die von der Decke hängt.</p>
+        <p data-i18n-html="story_p6">Lea ist so viel mehr als ihre Diagnose. Sie lacht gern, liebt Musik und Geschichten aus ihrer Toniebox, hört mit Papa Rockmusik und freut sich über unseren Hund Tequila und unseren Kater Mojito. Und wenn ihr etwas nicht gefällt, zeigt sie das sehr deutlich.</p>
         <a href="#fortschritte" class="btn btn-primary mt-24" style="display:inline-flex;" data-i18n="story_btn">Leas Fortschritte sehen →</a>
       </div>
     </div>
@@ -468,10 +493,10 @@
       <p data-i18n="nusap1_p1">Das Gen NUSAP1 enthält den Bauplan für ein Protein, das bei der Zellteilung eine entscheidende Rolle spielt. Es organisiert die Kernspindel – ein molekulares Gerüst, das dafür sorgt, dass Chromosomen korrekt auf Tochterzellen verteilt werden. Ohne dieses Protein läuft die Zellteilung fehlerhaft ab.</p>
       <p data-i18n="nusap1_p2">Für das sich entwickelnde Gehirn eines ungeborenen Kindes ist fehlerfreie Zellteilung alles. Nervenzellen, die sich nicht richtig teilen, können keine stabilen neuronalen Netzwerke aufbauen. Das Gehirn entwickelt sich unvollständig.</p>
       <p data-i18n-html="nusap1_p3">Bei Lea handelt es sich um eine <strong>de-novo-Mutation</strong> – diese Mutation existierte weder bei ihrer Mutter noch bei ihrem Vater. Sie entstand spontan, ohne vorhersehbaren Grund. Es trifft Familien ohne Vorgeschichte. Es trifft zufällig.</p>
-      <p data-i18n-html="nusap1_p4">NUSAP1-Mutationen sind <strong>extrem selten</strong>. Weltweit sind bisher weniger als 50 Fälle dokumentiert. Eltern betroffener Kinder stehen fast allein vor einem medizinischen Rätsel.</p>
+      <p data-i18n-html="nusap1_p4">NUSAP1-Veränderungen sind <strong>extrem selten</strong>. Als Lea ihre Diagnose bekam, waren nach unserem damaligen Kenntnisstand weltweit nur drei betroffene Kinder bekannt. Selbst Ärzte können kaum vorhersagen, wie sich betroffene Kinder entwickeln.</p>
     </div>
     <div class="medical-grid">
-      <div class="medical-card"><div class="fact-number">&lt; 50</div><div class="fact-label" data-i18n="fact1_label">weltweit dokumentierte Fälle mit NUSAP1-Mutation (Stand 2025)</div></div>
+      <div class="medical-card"><div class="fact-number">3</div><div class="fact-label" data-i18n="fact1_label">betroffene Kinder weltweit bekannt, als Lea ihre Diagnose bekam (nach damaligem Kenntnisstand)</div></div>
       <div class="medical-card"><div class="fact-number">100 %</div><div class="fact-label" data-i18n="fact2_label">de novo – keine erbliche Weitergabe der Mutation von einem Elternteil</div></div>
       <div class="medical-card"><div class="fact-number">∅</div><div class="fact-label" data-i18n="fact3_label">kein Standardprotokoll – jede Behandlung ist individuell und experimentell</div></div>
     </div>
@@ -482,9 +507,9 @@
 <section class="epilepsy-section" id="epilepsie">
   <div class="container">
     <div class="text-center" style="max-width:700px;margin:0 auto 56px;">
-      <div class="section-tag" data-i18n="section_epilepsy_tag">Epilepsie bei Säuglingen</div>
-      <h2 class="section-title" data-i18n="section_epilepsy_title">Was ein Anfall mit dem Gehirn eines Babys macht</h2>
-      <p data-i18n="section_epilepsy_intro">Die meisten Menschen haben noch nie erlebt, wie ein epileptischer Anfall bei einem Neugeborenen aussieht. Es ist wichtig, das zu verstehen.</p>
+      <div class="section-tag" data-i18n="section_epilepsy_tag">Epilepsie bei Kleinkindern</div>
+      <h2 class="section-title" data-i18n="section_epilepsy_title">Was ein Anfall mit dem Gehirn eines Kleinkindes macht</h2>
+      <p data-i18n="section_epilepsy_intro">Bereits mit sechs Wochen hatte Lea ihre ersten Anfälle. Seitdem wurden sechs Medikamente und verschiedene Kombinationen ausprobiert. Lea wird in spezialisierten Epilepsiezentren in Hannover und Berlin betreut – aktuell prüfen die Ärzte, ob ein Vagusnervstimulator helfen kann.</p>
     </div>
     <div style="max-width:800px;margin:0 auto;">
       <p data-i18n="epilepsy_p1">Stell dir vor, in deinem Kopf bricht ein elektrischer Sturm los. Neuronen, die normalerweise geordnet kommunizieren, feuern alle gleichzeitig, unkontrolliert – wie ein Kurzschluss, der sich in Millisekunden durch das gesamte Gehirn ausbreitet. Das ist ein epileptischer Anfall. Für ein Baby, dessen Gehirn sich gerade erst entwickelt, ist dieser Sturm besonders verheerend.</p>
@@ -510,17 +535,36 @@
     </div>
     <div style="max-width:720px;margin:0 auto;">
       <div class="milestone-list">
-        <div class="milestone"><div class="milestone-dot achieved">🏥</div><div class="milestone-content"><div class="milestone-date" data-i18n="ms1_date">August 2025</div><h3 data-i18n="ms1_title">Lea kommt auf die Welt</h3><p data-i18n="ms1_text">Ein kleines Mädchen mit unbekannter Diagnose. Die ersten Tage zeigen: irgendetwas stimmt nicht. Die Untersuchungen beginnen.</p></div></div>
+        <div class="milestone"><div class="milestone-dot achieved">🏥</div><div class="milestone-content"><div class="milestone-date" data-i18n="ms1_date">10. August 2025</div><h3 data-i18n="ms1_title">Lea kommt auf die Welt</h3><p data-i18n="ms1_text">Ein kleines Mädchen mit unbekannter Diagnose. Die ersten Tage zeigen: irgendetwas stimmt nicht. Die Untersuchungen beginnen.</p></div></div>
         <div class="milestone"><div class="milestone-dot achieved">🧬</div><div class="milestone-content"><div class="milestone-date" data-i18n="ms2_date">Herbst 2025</div><h3 data-i18n="ms2_title">Diagnose: NUSAP1-Genmutation</h3><p data-i18n="ms2_text">Nach genetischer Diagnostik steht fest: Lea trägt eine de-novo-Mutation im NUSAP1-Gen. Die Familie steht vor einem Rätsel, für das es kaum Antworten gibt.</p></div></div>
-        <div class="milestone"><div class="milestone-dot achieved">⚡</div><div class="milestone-content"><div class="milestone-date" data-i18n="ms3_date">Herbst – Winter 2025</div><h3 data-i18n="ms3_title">Fast tägliche epileptische Anfälle</h3><p data-i18n="ms3_text">Die schwerste Zeit. Lea erleidet fast täglich Anfälle. Ihre Familie kämpft an ihrer Seite, Nacht für Nacht. Jeder Anfall ist ein Angriff auf ihr wachsendes Gehirn.</p></div></div>
+        <div class="milestone"><div class="milestone-dot achieved">⚡</div><div class="milestone-content"><div class="milestone-date" data-i18n="ms3_date">Ab Ende September 2025</div><h3 data-i18n="ms3_title">Die ersten Anfälle</h3><p data-i18n="ms3_text">Mit sechs Wochen hat Lea ihre ersten epileptischen Anfälle. In den folgenden Monaten kommen sie fast täglich – die schwerste Zeit für unsere Familie.</p></div></div>
         <div class="milestone"><div class="milestone-dot achieved">💊</div><div class="milestone-content"><div class="milestone-date" data-i18n="ms4_date">Winter 2025/2026</div><h3 data-i18n="ms4_title">Medikamentöse Behandlung greift</h3><p data-i18n="ms4_text">Die Anfälle gehen zurück auf etwa einen pro Woche. Ein relativer Erfolg, erkauft mit starken Nebenwirkungen.</p></div></div>
-        <div class="milestone"><div class="milestone-dot achieved">🙌</div><div class="milestone-content"><div class="milestone-date" data-i18n="ms5_date">Frühjahr 2026</div><h3 data-i18n="ms5_title">Die Hände öffnen sich</h3><p data-i18n="ms5_text">Lang hatte Lea nur fest geschlossene Fäuste. Nach Wochen intensiver Ergotherapie: Lea kann die Hände öffnen und ein Spielzeug halten. Für uns ist das ein Wunder.</p></div></div>
-        <div class="milestone"><div class="milestone-dot">🌱</div><div class="milestone-content"><div class="milestone-date" data-i18n="ms6_date">Heute &amp; morgen</div><h3 data-i18n="ms6_title">Wir kämpfen weiter</h3><p data-i18n="ms6_text">Jede Therapie, jede Übung bringt Lea einen weiteren Schritt voran. Wir geben nicht auf – weil Lea nicht aufgibt.</p></div></div>
+        <div class="milestone"><div class="milestone-dot achieved">🙌</div><div class="milestone-content"><div class="milestone-date" data-i18n="ms5_date">Frühjahr 2026</div><h3 data-i18n="ms5_title">Erste Therapiewoche in Poznań</h3><p data-i18n="ms5_text">In der Falmed-Praxis in Poznań beobachten wir erste Veränderungen: Lea öffnet ihre Hände leichter, ihre Muskelspannung wirkt ausgeglichener.</p></div></div>
+        <div class="milestone"><div class="milestone-dot achieved">🇵🇱</div><div class="milestone-content"><div class="milestone-date" data-i18n="ms6_date">Sommer 2026</div><h3 data-i18n="ms6_title">CME-/MEDEK-Therapie in Piła</h3><p data-i18n="ms6_text">Wir entdecken die CME-/MEDEK-Therapie nach Ramón Cuevas und fahren seitdem regelmäßig nach Piła. Dort arbeitet Lea intensiv an Sitzen, Gleichgewicht und unterstütztem Stehen. Dazu kommt Neurologopädie für Mundmotorik und Kommunikation.</p></div></div>
+        <div class="milestone"><div class="milestone-dot achieved">🏫</div><div class="milestone-content"><div class="milestone-date" data-i18n="ms7_date">August 2026</div><h3 data-i18n="ms7_title">Krippe – ein Stück normaler Alltag</h3><p data-i18n="ms7_text">Seit August 2026 besucht Lea eine Krippe in Braunschweig – mit Begleitung eines Pflegedienstes. Ein bedeutender Schritt für ein kleines Mädchen, das so viel kämpft.</p></div></div>
+        <div class="milestone"><div class="milestone-dot">🌱</div><div class="milestone-content"><div class="milestone-date" data-i18n="ms8_date">Heute &amp; morgen</div><h3 data-i18n="ms8_title">Wir kämpfen weiter</h3><p data-i18n="ms8_text">Leas Anfälle sind noch immer häufig und unberechenbar. Die Ärzte prüfen, ob ein Vagusnervstimulator helfen kann. Für 2027 planen wir vier intensive Therapiewochen in Polen – wir geben nicht auf, weil Lea nicht aufgibt.</p></div></div>
       </div>
     </div>
-    <div class="progress-photos" style="max-width:720px;margin:48px auto 0;">
-      <img src="images/Lea_Stuht.jpeg" alt="Lea mit Spielzeug" loading="lazy" />
-      <img src="images/Lea_ball.jpeg" alt="Lea in der Therapie" loading="lazy" />
+    <div class="progress-photos" style="max-width:900px;margin:48px auto 0;">
+      <img src="images/lea-polen-therapie.webp" alt="Lea lacht beim Stehen in der Therapie in Polen" loading="lazy" />
+      <img src="images/lea-erster-geburtstag.webp" alt="Lea an ihrem ersten Geburtstag" loading="lazy" />
+      <img src="images/lea-dreirad.webp" alt="Lea auf ihrem Dreirad" loading="lazy" />
+      <img src="images/lea-mit-papa.webp" alt="Lea steht mit Papas Hilfe und lacht" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<!-- TIKTOK -->
+<section id="tiktok" style="background:var(--text);padding:60px 0;">
+  <div class="container">
+    <div style="max-width:720px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:32px;align-items:center;">
+      <div style="font-size:4rem;line-height:1;">🎵</div>
+      <div>
+        <div class="section-tag" style="color:var(--accent-light);">Folge uns auf TikTok</div>
+        <h2 style="color:#fff;margin-bottom:16px;">Leas Geschichte auf TikTok</h2>
+        <p style="color:rgba(255,255,255,.85);margin-bottom:24px;">Wir dokumentieren als Eltern Leas Reise auf TikTok – jeden anfallsfreien Tag, jeden kleinen Meilenstein und die Momente, die uns Hoffnung geben. Folg uns und feier jeden Fortschritt mit uns!</p>
+        <a href="https://www.tiktok.com/@lea.herter7" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:10px;background:#fe2c55;color:#fff;padding:14px 28px;border-radius:50px;font-weight:700;font-size:1rem;text-decoration:none;transition:all 0.28s ease;">▶ @Lea.Herter7 folgen</a>
+      </div>
     </div>
   </div>
 </section>
@@ -530,16 +574,33 @@
   <div class="container">
     <div class="text-center" style="max-width:680px;margin:0 auto 56px;">
       <div class="section-tag" data-i18n="section_donate_tag">Jetzt helfen</div>
-      <h2 class="section-title" data-i18n="section_donate_title">Schenke Lea eine Chance</h2>
-      <p class="lead" data-i18n="section_donate_lead">Die Therapien, die Lea vorankommen lassen, werden von der Krankenkasse nicht vollständig übernommen. Jede Spende macht einen echten Unterschied.</p>
+      <h2 class="section-title" data-i18n="section_donate_title">Gemeinsam für Leas nächste Schritte</h2>
+      <p class="lead" data-i18n="section_donate_lead">Die intensiven Therapien in Polen zahlt keine Krankenkasse – wir finanzieren sie selbst. Nicht, weil wir wissen, dass Lea eines Tages laufen oder sprechen wird. Sondern weil wir ihr die Chance geben möchten, ihre eigenen Möglichkeiten zu entdecken.</p>
+    </div>
+    <div class="goal-box">
+      <div class="goal-tag" data-i18n="goal_tag">Spendenziel 2027</div>
+      <div class="goal-amount">16.000 €</div>
+      <p class="goal-text" data-i18n-html="goal_text">Für 2027 planen wir <strong>vier intensive MEDEK-Therapiewochen</strong> in Polen. Eine Woche kostet uns einschließlich Behandlung, Fahrt und Unterkunft ungefähr 4.000 €.</p>
+      <div class="goal-calc">
+        <div class="goal-calc-item"><strong>4</strong><span data-i18n="goal_calc1">Therapiewochen in Piła</span></div>
+        <div class="goal-calc-op">×</div>
+        <div class="goal-calc-item"><strong>≈ 4.000 €</strong><span data-i18n="goal_calc2">pro Woche inkl. Fahrt und Unterkunft</span></div>
+        <div class="goal-calc-op">=</div>
+        <div class="goal-calc-item"><strong>16.000 €</strong><span data-i18n="goal_calc3">Spendenziel für 2027</span></div>
+      </div>
+      <p class="goal-note" data-i18n="goal_note">Weitere Förderung wie die neurologopädische Therapie kommt noch hinzu.</p>
+    </div>
+    <div class="funding-grid">
+      <div class="funding-card"><h3 data-i18n="fund1_title">Übernimmt die Krankenkasse</h3><ul data-i18n-html="fund1_list"><li>Physiotherapie nach Bobath</li><li>Ergotherapie</li><li>Frühförderung, zweimal pro Woche</li></ul></div>
+      <div class="funding-card own"><h3 data-i18n="fund2_title">Zahlen wir selbst – hier hilft deine Spende</h3><ul data-i18n-html="fund2_list"><li>CME-/MEDEK-Intensivtherapie in Piła</li><li>Neurologopädie: Mundmotorik, Kauen, Kommunikation</li><li>Fahrt und Unterkunft in Polen</li></ul></div>
     </div>
     <div class="donate-cards">
-      <div class="donate-card"><div class="donate-amount">25 €</div><div class="donate-label" data-i18n="dc1_label">Eine Therapiestunde Ergotherapie – Leas Hände lernen greifen</div><a href="#donate-methods" class="btn btn-outline" style="font-size:.88rem;padding:10px 20px;" data-i18n="dc1_btn">Spenden</a></div>
-      <div class="donate-card featured"><div class="donate-amount">50 €</div><div class="donate-label" data-i18n="dc2_label">Zwei Therapiestunden oder spezielles Hilfsmittel für die Entwicklung</div><a href="#donate-methods" class="btn btn-accent" style="font-size:.88rem;padding:10px 20px;" data-i18n="dc2_btn">Spenden</a></div>
-      <div class="donate-card"><div class="donate-amount">100 €</div><div class="donate-label" data-i18n="dc3_label">Vier Stunden Intensivtherapie – ein bedeutender Schritt vorwärts</div><a href="#donate-methods" class="btn btn-outline" style="font-size:.88rem;padding:10px 20px;" data-i18n="dc3_btn">Spenden</a></div>
+      <div class="donate-card"><div class="donate-amount">25 €</div><div class="donate-label" data-i18n="dc1_label">Ein Beitrag zu Fahrt und Unterkunft für Leas Therapiewoche in Polen</div><a href="#donate-methods" class="btn btn-outline" style="font-size:.88rem;padding:10px 20px;" data-i18n="dc1_btn">Spenden</a></div>
+      <div class="donate-card featured"><div class="donate-amount">50 €</div><div class="donate-label" data-i18n="dc2_label">Unterstützt Leas intensive CME-/MEDEK-Therapie in Piła</div><a href="#donate-methods" class="btn btn-accent" style="font-size:.88rem;padding:10px 20px;" data-i18n="dc2_btn">Spenden</a></div>
+      <div class="donate-card"><div class="donate-amount">100 €</div><div class="donate-label" data-i18n="dc3_label">40 Spenden à 100 € ermöglichen eine ganze Therapiewoche</div><a href="#donate-methods" class="btn btn-outline" style="font-size:.88rem;padding:10px 20px;" data-i18n="dc3_btn">Spenden</a></div>
     </div>
     <div class="donate-box" id="donate-methods">
-      <p style="color:var(--text-muted);margin-bottom:24px;font-size:.95rem;" data-i18n="donate_box_text">Deine Spende geht direkt an Anita Herter – Leas Familie – und wird vollständig für Leas Therapien verwendet.</p>
+      <p style="color:var(--text-muted);margin-bottom:24px;font-size:.95rem;" data-i18n="donate_box_text">Jeder Betrag hilft – ob 5, 10, 20 oder 50 €. Deine Spende geht direkt an Anita Herter – Leas Familie – und wird vollständig für Leas Therapien verwendet.</p>
       <!-- TABS -->
       <div class="donate-tabs">
         <button class="donate-tab-btn active" onclick="showDonateTab('crowd',this)" data-i18n="donate_tab_crowd">🌟 GoodCrowd</button>
@@ -734,25 +795,36 @@
 // ── TRANSLATIONS ──────────────────────────────────────────────────
 const T = {
   de: {
+    fund2_list:"<li>CME-/MEDEK-Intensivtherapie in Piła</li><li>Neurologopädie: Mundmotorik, Kauen, Kommunikation</li><li>Fahrt und Unterkunft in Polen</li>",
+    fund2_title:"Zahlen wir selbst – hier hilft deine Spende",
+    fund1_list:"<li>Physiotherapie nach Bobath</li><li>Ergotherapie</li><li>Frühförderung, zweimal pro Woche</li>",
+    fund1_title:"Übernimmt die Krankenkasse",
+    goal_note:"Weitere Förderung wie die neurologopädische Therapie kommt noch hinzu.",
+    goal_calc3:"Spendenziel für 2027",
+    goal_calc2:"pro Woche inkl. Fahrt und Unterkunft",
+    goal_calc1:"Therapiewochen in Piła",
+    goal_text:"Für 2027 planen wir <strong>vier intensive MEDEK-Therapiewochen</strong> in Polen. Eine Woche kostet uns einschließlich Behandlung, Fahrt und Unterkunft ungefähr 4.000 €.",
+    goal_tag:"Spendenziel 2027",
+    story_p6:"Lea ist so viel mehr als ihre Diagnose. Sie lacht gern, liebt Musik und Geschichten aus ihrer Toniebox, hört mit Papa Rockmusik und freut sich über unseren Hund Tequila und unseren Kater Mojito. Und wenn ihr etwas nicht gefällt, zeigt sie das sehr deutlich.",
     nav_story:"Leas Geschichte", nav_progress:"Fortschritte", nav_parents:"Für Eltern", nav_donate:"Jetzt spenden ♥",
     hero_badge:"Seltene Erkrankung · NUSAP1-Gendefekt",
     hero_title:"Lea kämpft.<br /><em>Mit allem, was sie hat.</em>",
-    hero_subtitle:"Im August 2025 kam Lea auf die Welt – ein kleines Mädchen mit einem großen Herzen und einem winzigen Fehler in ihrer DNA, der alles verändert hat. Sie ist noch kein Jahr alt und hat schon mehr gekämpft als die meisten Menschen in einem Leben.",
+    hero_subtitle:"Im August 2025 kam Lea auf die Welt – ein kleines Mädchen mit einem großen Herzen und einem winzigen Fehler in ihrer DNA, der alles verändert hat. Lea ist jetzt 14 Monate alt – ein Kleinkind, das jeden Tag kämpft, lacht und uns zeigt, was echter Mut bedeutet.",
     hero_btn_donate:"♥ Jetzt für Lea spenden", hero_btn_read:"Ihre Geschichte lesen",
-    hero_quote:"\u201ESie ist noch kein Jahr alt und hat schon mehr Mut bewiesen als die meisten von uns.\u201C",
+    hero_quote:"\u201ESie ist 14 Monate alt \u2013 und hat mehr Mut bewiesen als die meisten von uns.\u201C",
     hero_quote_by:"— Leas Familie",
-    stat1_label:"Jahr alt –<br />und schon so viel erlebt",
-    stat2_label:"Tage Kampf seit<br />der Geburt",
-    stat3_label:"bekannte Fälle weltweit –<br />NUSAP1 ist extrem selten",
-    stat4_label:"Spielzeug, das Lea<br />heute selbst halten kann",
+    stat1_label:"Monate alt –<br />und schon so viel erlebt",
+    stat2_label:"Status epilepticus –<br />lebensbedrohliche Notfälle",
+    stat3_label:"betroffene Kinder weltweit bekannt,<br />als Lea ihre Diagnose bekam",
+    stat4_label:"Spendenziel 2027 –<br />vier Therapiewochen in Polen",
     section_story_tag:"Leas Geschichte",
     section_story_title:"Ein kleines Leben, das kämpft – von Anfang an",
-    story_p1:"Als Lea im August 2025 zur Welt kam, ahnten ihre Eltern nicht, was sie in den nächsten Monaten durchstehen würden. Die Diagnose kam wie ein Blitz: <strong>eine de-novo-Mutation im NUSAP1-Gen</strong> – ein Fehler, den weder Mutter noch Vater tragen. Eine Mutation, die spontan entstand. Zufällig. Unbarmherzig.",
-    story_p2:"Dieser winzige Defekt hat Leas Gehirn daran gehindert, sich vollständig zu entwickeln. Die Folgen sind gravierend: Leas Motorik, ihre Kognition, ihre gesamte neurologische Entwicklung schreiten auf einem eigenen, mühsamen Weg voran.",
-    story_quote:"\u201EFast täglich hat Lea epileptische Anfälle gehabt. Wir sahen zu, wie ihr kleiner Körper zitterte und ihr Gehirn unter Strom gesetzt wurde – immer und immer wieder.\u201C",
-    story_p3:"Heute bekommt Lea Medikamente, die die Anfälle auf etwa einen pro Woche reduziert haben. Aber diese Medikamente haben <strong>starke Nebenwirkungen</strong>, die Leas kleinen Körper täglich belasten.",
-    story_p4:"Was andere Kinder mühelos tun – sitzen, greifen, sich drehen – ist für Lea eine Welt aus errungenen Zentimetern. Lange konnte sie ihre Hände nicht öffnen. Ihre Fäuste blieben fest geschlossen. Spielzeug greifen? Nicht möglich.",
-    story_p5:"Dann kamen die Therapien. Und dann: <span class='highlight'>ein Wunder</span>. Langsam öffneten sich ihre Finger. Heute kann Lea ein Spielzeug in der Hand halten. Für uns ist das alles.",
+    story_p1:"Lea wurde am 10. August 2025 geboren. Kurz darauf kam die Diagnose: <strong>eine Veränderung im NUSAP1-Gen</strong> – de novo, also bei keinem Elternteil vorhanden, sondern spontan entstanden. Als wir die Diagnose erhielten, waren weltweit nach unserem damaligen Kenntnisstand nur drei betroffene Kinder bekannt.",
+    story_p2:"Selbst die Ärzte konnten uns kaum sagen, wie Leas Zukunft aussehen würde. Ein Neuropädiater sagte uns damals, dass wir Sprechen und Laufen bei Lea vergessen könnten. Doch wir möchten Leas Zukunft nicht allein von einer Prognose bestimmen lassen.",
+    story_quote:"„Leas Anfälle sind unberechenbar – mal hat sie weniger, mal deutlich mehr. Viermal musste sie bereits einen Status epilepticus durchmachen, jedes Mal ein medizinischer Notfall. Die Angst begleitet uns jeden Tag.“",
+    story_p3:"Mit sechs Wochen hatte Lea ihre ersten Anfälle. Seitdem verbringt sie viel Zeit im Krankenhaus – für Notfälle, Medikamenteneinstellung und Untersuchungen. <strong>Sechs verschiedene Medikamente</strong> und unterschiedliche Kombinationen wurden bereits ausprobiert.",
+    story_p4:"Mit fast 15 Monaten kann Lea sich noch nicht selbstständig drehen, aufsetzen oder gezielt nach Spielzeug greifen. Doch sie hat schon viel geschafft: Sie kann sitzen, wenn wir sie hinsetzen, und wird beim unterstützten Stehen immer stabiler. Sie brabbelt viel und schafft inzwischen sogar Brei mit kleinen Stückchen.",
+    story_p5:"Durch intensive Förderung in Deutschland und Polen sehen wir <span class='highlight'>echte Fortschritte</span>: Ihre Hände, die anfangs stark angespannt waren, kann Lea inzwischen besser öffnen. Am liebsten berührt und schubst sie ihre Spielzeugkette, die von der Decke hängt.",
     story_btn:"Leas Fortschritte sehen →",
     section_nusap1_tag:"Medizinische Information",
     section_nusap1_title:"Was ist NUSAP1?",
@@ -761,35 +833,37 @@ const T = {
     nusap1_p1:"Das Gen NUSAP1 enthält den Bauplan für ein Protein, das bei der Zellteilung eine entscheidende Rolle spielt. Es organisiert die Kernspindel – ein molekulares Gerüst, das dafür sorgt, dass Chromosomen korrekt auf Tochterzellen verteilt werden. Ohne dieses Protein läuft die Zellteilung fehlerhaft ab.",
     nusap1_p2:"Für das sich entwickelnde Gehirn eines ungeborenen Kindes ist fehlerfreie Zellteilung alles. Nervenzellen, die sich nicht richtig teilen, können keine stabilen neuronalen Netzwerke aufbauen. Das Gehirn entwickelt sich unvollständig.",
     nusap1_p3:"Bei Lea handelt es sich um eine <strong>de-novo-Mutation</strong> – diese Mutation existierte weder bei ihrer Mutter noch bei ihrem Vater. Sie entstand spontan, ohne vorhersehbaren Grund. Es trifft Familien ohne Vorgeschichte. Es trifft zufällig.",
-    nusap1_p4:"NUSAP1-Mutationen sind <strong>extrem selten</strong>. Weltweit sind bisher weniger als 50 Fälle dokumentiert. Eltern betroffener Kinder stehen fast allein vor einem medizinischen Rätsel.",
-    fact1_label:"weltweit dokumentierte Fälle mit NUSAP1-Mutation (Stand 2025)",
+    nusap1_p4:"NUSAP1-Veränderungen sind <strong>extrem selten</strong>. Als Lea ihre Diagnose bekam, waren nach unserem damaligen Kenntnisstand weltweit nur drei betroffene Kinder bekannt. Selbst Ärzte können kaum vorhersagen, wie sich betroffene Kinder entwickeln.",
+    fact1_label:"betroffene Kinder weltweit bekannt, als Lea ihre Diagnose bekam (nach damaligem Kenntnisstand)",
     fact2_label:"de novo – keine erbliche Weitergabe der Mutation von einem Elternteil",
     fact3_label:"kein Standardprotokoll – jede Behandlung ist individuell und experimentell",
-    section_epilepsy_tag:"Epilepsie bei Säuglingen",
-    section_epilepsy_title:"Was ein Anfall mit dem Gehirn eines Babys macht",
-    section_epilepsy_intro:"Die meisten Menschen haben noch nie erlebt, wie ein epileptischer Anfall bei einem Neugeborenen aussieht. Es ist wichtig, das zu verstehen.",
+    section_epilepsy_tag:"Epilepsie bei Kleinkindern",
+    section_epilepsy_title:"Was ein Anfall mit dem Gehirn eines Kleinkindes macht",
+    section_epilepsy_intro:"Bereits mit sechs Wochen hatte Lea ihre ersten Anfälle. Seitdem wurden sechs Medikamente und verschiedene Kombinationen ausprobiert. Lea wird in spezialisierten Epilepsiezentren in Hannover und Berlin betreut – aktuell prüfen die Ärzte, ob ein Vagusnervstimulator helfen kann.",
     epilepsy_p1:"Stell dir vor, in deinem Kopf bricht ein elektrischer Sturm los. Neuronen, die normalerweise geordnet kommunizieren, feuern alle gleichzeitig, unkontrolliert – wie ein Kurzschluss, der sich in Millisekunden durch das gesamte Gehirn ausbreitet. Das ist ein epileptischer Anfall. Für ein Baby, dessen Gehirn sich gerade erst entwickelt, ist dieser Sturm besonders verheerend.",
     epilepsy_quote:"\u201ELeas Gehirn befindet sich in der sensibelsten Entwicklungsphase, die ein Mensch je erlebt. Jeder Anfall in dieser Zeit ist nicht nur ein Moment des Leidens – er hinterlässt Spuren, die man nicht mehr löschen kann.\u201C",
-    epilepsy_p2:"Fast täglich hat Lea in den ersten Monaten ihres Lebens Anfälle erlitten. Das Gehirn eines Säuglings ist plastisch – es kann sich anpassen. Aber Schäden in dieser Phase wirken besonders tief. <strong>Jeder Anfall zählt. Jeder verhinderte Anfall auch.</strong>",
+    epilepsy_p2:"Leas Anfälle sind unberechenbar und häufig – viermal gab es bereits einen Status epilepticus. Das Gehirn eines Kleinkindes ist noch immer plastisch – es kann sich anpassen. Aber Schäden in dieser Phase wirken besonders tief. <strong>Jeder Anfall zählt. Jeder verhinderte Anfall auch.</strong>",
     impact1_title:"Neuronaler Sturm", impact1_text:"Bei einem Anfall entladen sich Nervenzellen unkontrolliert. Das Gehirn verliert kurzfristig die Kontrolle über alle Funktionen – Motorik, Wahrnehmung, Bewusstsein.",
-    impact2_title:"Unterbrochene Entwicklung", impact2_text:"Das Säuglingshirn baut täglich neue neuronale Verbindungen auf. Häufige Anfälle stören diesen Prozess und verlangsamen die Entwicklung dauerhaft.",
+    impact2_title:"Unterbrochene Entwicklung", impact2_text:"Das Kleinkindgehirn baut täglich neue neuronale Verbindungen auf. Häufige Anfälle stören diesen Prozess und verlangsamen die Entwicklung dauerhaft.",
     impact3_title:"Teufelskreis der Anfälle", impact3_text:"Anfälle verändern das Gehirn so, dass weitere Anfälle wahrscheinlicher werden. Je früher sie kontrolliert werden, desto geringer der langfristige Schaden.",
     impact4_title:"Der Preis der Kontrolle", impact4_text:"Leas Medikamente reduzieren die Anfälle – aber ihre Nebenwirkungen belasten Leber, Konzentration und Energie täglich. Ein notwendiger, schwieriger Kompromiss.",
     section_progress_tag:"Leas Weg", section_progress_title:"Jeder Zentimeter ist ein Sieg",
     section_progress_lead:"Was wie eine Selbstverständlichkeit klingt, ist für Lea das Ergebnis von Wochen harter Arbeit, geduldiger Therapeuten und einer Familie, die niemals aufgehört hat zu glauben.",
-    ms1_date:"August 2025", ms1_title:"Lea kommt auf die Welt", ms1_text:"Ein kleines Mädchen mit unbekannter Diagnose. Die ersten Tage zeigen: irgendetwas stimmt nicht. Die Untersuchungen beginnen.",
+    ms1_date:"10. August 2025", ms1_title:"Lea kommt auf die Welt", ms1_text:"Ein kleines Mädchen mit unbekannter Diagnose. Die ersten Tage zeigen: irgendetwas stimmt nicht. Die Untersuchungen beginnen.",
     ms2_date:"Herbst 2025", ms2_title:"Diagnose: NUSAP1-Genmutation", ms2_text:"Nach genetischer Diagnostik steht fest: Lea trägt eine de-novo-Mutation im NUSAP1-Gen. Die Familie steht vor einem Rätsel, für das es kaum Antworten gibt.",
-    ms3_date:"Herbst – Winter 2025", ms3_title:"Fast tägliche epileptische Anfälle", ms3_text:"Die schwerste Zeit. Lea erleidet fast täglich Anfälle. Ihre Familie kämpft an ihrer Seite, Nacht für Nacht. Jeder Anfall ist ein Angriff auf ihr wachsendes Gehirn.",
+    ms3_date:"Ab Ende September 2025", ms3_title:"Die ersten Anfälle", ms3_text:"Mit sechs Wochen hat Lea ihre ersten epileptischen Anfälle. In den folgenden Monaten kommen sie fast täglich – die schwerste Zeit für unsere Familie.",
     ms4_date:"Winter 2025/2026", ms4_title:"Medikamentöse Behandlung greift", ms4_text:"Die Anfälle gehen zurück auf etwa einen pro Woche. Ein relativer Erfolg, erkauft mit starken Nebenwirkungen.",
-    ms5_date:"Frühjahr 2026", ms5_title:"Die Hände öffnen sich", ms5_text:"Lang hatte Lea nur fest geschlossene Fäuste. Nach Wochen intensiver Ergotherapie: Lea kann die Hände öffnen und ein Spielzeug halten. Für uns ist das ein Wunder.",
-    ms6_date:"Heute & morgen", ms6_title:"Wir kämpfen weiter", ms6_text:"Jede Therapie, jede Übung bringt Lea einen weiteren Schritt voran. Wir geben nicht auf – weil Lea nicht aufgibt.",
-    section_donate_tag:"Jetzt helfen", section_donate_title:"Schenke Lea eine Chance",
-    section_donate_lead:"Die Therapien, die Lea vorankommen lassen, werden von der Krankenkasse nicht vollständig übernommen. Jede Spende macht einen echten Unterschied.",
-    dc1_label:"Eine Therapiestunde Ergotherapie – Leas Hände lernen greifen", dc1_btn:"Spenden",
-    dc2_label:"Zwei Therapiestunden oder spezielles Hilfsmittel für die Entwicklung", dc2_btn:"Spenden",
-    dc3_label:"Vier Stunden Intensivtherapie – ein bedeutender Schritt vorwärts", dc3_btn:"Spenden",
+    ms5_date:"Frühjahr 2026", ms5_title:"Erste Therapiewoche in Poznań", ms5_text:"In der Falmed-Praxis in Poznań beobachten wir erste Veränderungen: Lea öffnet ihre Hände leichter, ihre Muskelspannung wirkt ausgeglichener.",
+    ms6_date:"Sommer 2026", ms6_title:"CME-/MEDEK-Therapie in Piła", ms6_text:"Wir entdecken die CME-/MEDEK-Therapie nach Ramón Cuevas und fahren seitdem regelmäßig nach Piła. Dort arbeitet Lea intensiv an Sitzen, Gleichgewicht und unterstütztem Stehen. Dazu kommt Neurologopädie für Mundmotorik und Kommunikation.",
+    ms7_date:"August 2026", ms7_title:"Krippe – ein Stück normaler Alltag", ms7_text:"Seit August 2026 besucht Lea eine Krippe in Braunschweig – mit Begleitung eines Pflegedienstes. Ein bedeutender Schritt für ein kleines Mädchen, das so viel kämpft.",
+    ms8_date:"Heute & morgen", ms8_title:"Wir kämpfen weiter", ms8_text:"Leas Anfälle sind noch immer häufig und unberechenbar. Die Ärzte prüfen, ob ein Vagusnervstimulator helfen kann. Für 2027 planen wir vier intensive Therapiewochen in Polen – wir geben nicht auf, weil Lea nicht aufgibt.",
+    section_donate_tag:"Jetzt helfen", section_donate_title:"Gemeinsam für Leas nächste Schritte",
+    section_donate_lead:"Die intensiven Therapien in Polen zahlt keine Krankenkasse – wir finanzieren sie selbst. Nicht, weil wir wissen, dass Lea eines Tages laufen oder sprechen wird. Sondern weil wir ihr die Chance geben möchten, ihre eigenen Möglichkeiten zu entdecken.",
+    dc1_label:"Ein Beitrag zu Fahrt und Unterkunft für Leas Therapiewoche in Polen", dc1_btn:"Spenden",
+    dc2_label:"Unterstützt Leas intensive CME-/MEDEK-Therapie in Piła", dc2_btn:"Spenden",
+    dc3_label:"40 Spenden à 100 € ermöglichen eine ganze Therapiewoche", dc3_btn:"Spenden",
     donate_box_title:"♥ Jetzt sicher über PayPal spenden",
-    donate_box_text:"Deine Spende geht direkt an Anita Herter – Leas Familie – und wird vollständig für Leas Therapien verwendet.",
+    donate_box_text:"Jeder Betrag hilft – ob 5, 10, 20 oder 50 €. Deine Spende geht direkt an Anita Herter – Leas Familie – und wird vollständig für Leas Therapien verwendet.",
     donate_paypal_btn:"Jetzt für Lea spenden",
     donate_paypal_note:"Empfänger: <strong>Anita Herter</strong> · PayPal: A.patalas@hotmail.com<br />Kein PayPal-Konto? Auch Zahlung per Kreditkarte möglich.",
     share_title:"Auch ohne Spende kannst du helfen",
@@ -840,25 +914,36 @@ const T = {
     cookie_accept:"Verstanden", cookie_decline:"Schließen"
   },
   en: {
+    fund2_list:"<li>Intensive CME/MEDEK therapy in Piła</li><li>Neuro-speech therapy: oral motor skills, chewing, communication</li><li>Travel and accommodation in Poland</li>",
+    fund2_title:"Paid by us – this is where your donation helps",
+    fund1_list:"<li>Bobath physiotherapy</li><li>Occupational therapy</li><li>Early intervention, twice a week</li>",
+    fund1_title:"Covered by health insurance",
+    goal_note:"Further support such as neuro-speech therapy comes on top of this.",
+    goal_calc3:"fundraising goal for 2027",
+    goal_calc2:"per week incl. travel and accommodation",
+    goal_calc1:"therapy weeks in Piła",
+    goal_text:"For 2027 we are planning <strong>four intensive MEDEK therapy weeks</strong> in Poland. One week costs us about €4,000, including treatment, travel and accommodation.",
+    goal_tag:"Fundraising goal 2027",
+    story_p6:"Lea is so much more than her diagnosis. She loves to laugh, enjoys music and stories from her Toniebox, listens to rock music with Dad and lights up around our dog Tequila and our cat Mojito. And when she doesn't like something, she makes that very clear.",
     nav_story:"Lea's Story", nav_progress:"Progress", nav_parents:"For Parents", nav_donate:"Donate Now ♥",
     hero_badge:"Rare Disease · NUSAP1 Gene Defect",
     hero_title:"Lea fights.<br /><em>With everything she has.</em>",
     hero_subtitle:"In August 2025, Lea came into the world – a little girl with a big heart and a tiny error in her DNA that changed everything. She's not even one year old and has already fought harder than most people do in a lifetime.",
     hero_btn_donate:"♥ Donate for Lea", hero_btn_read:"Read her story",
-    hero_quote:"\"She's not even one year old and has already shown more courage than most of us.\"",
+    hero_quote:"\"She is 14 months old – and has shown more courage than most of us.\"",
     hero_quote_by:"— Lea's family",
     stat1_label:"Year old –<br />and has been through so much",
     stat2_label:"Days of fighting<br />since birth",
-    stat3_label:"known cases worldwide –<br />NUSAP1 is extremely rare",
-    stat4_label:"A toy that Lea<br />can hold today",
+    stat3_label:"affected children known worldwide<br />when Lea was diagnosed",
+    stat4_label:"Fundraising goal 2027 –<br />four therapy weeks in Poland",
     section_story_tag:"Lea's Story",
     section_story_title:"A little life that fights – from the very beginning",
-    story_p1:"When Lea came into the world in August 2025, her parents had no idea what they would face in the coming months. The diagnosis hit like a bolt from the blue: <strong>a de novo mutation in the NUSAP1 gene</strong> – an error that neither mother nor father carry in their DNA. A mutation that arose spontaneously. Randomly. Relentlessly.",
-    story_p2:"This tiny defect prevented Lea's brain from developing fully. The consequences are severe: Lea's motor skills, cognition, and entire neurological development are progressing on their own difficult path.",
-    story_quote:"\"Lea had epileptic seizures almost every day. We watched her little body tremble and her brain be struck by electricity – over and over again. And we could do nothing but fight.\"",
-    story_p3:"Today, Lea receives medication that has reduced her seizures to about one per week. But these medications have <strong>strong side effects</strong> that burden Lea's small body every day.",
-    story_p4:"What other children her age do effortlessly – sitting, grasping, rolling over – for Lea is a world of hard-won centimetres. For a long time, Lea could not open her hands. Her fists stayed tightly closed. Grasping a toy? Not possible.",
-    story_p5:"Then came the therapies. And then: <span class='highlight'>a miracle</span>. Slowly her fingers opened. Today, Lea can hold a toy in her hand. For us, this is everything.",
+    story_p1:"Lea was born on 10 August 2025. Shortly afterwards came the diagnosis: <strong>a change in the NUSAP1 gene</strong> – de novo, meaning neither parent carries it; it arose spontaneously. When we received the diagnosis, as far as we knew at the time, only three affected children were known worldwide.",
+    story_p2:"Even the doctors could hardly tell us what Lea's future would look like. A paediatric neurologist told us back then that we could forget about Lea ever speaking or walking. But we don't want a prognosis alone to decide Lea's future.",
+    story_quote:"\"Lea's seizures are unpredictable – sometimes she has fewer, sometimes many more. Four times she has already gone through status epilepticus, each time a medical emergency. The fear stays with us every day.\"",
+    story_p3:"Lea had her first seizures at six weeks old. Since then she has spent a lot of time in hospital – for emergencies, medication adjustments and examinations. <strong>Six different medications</strong> and various combinations have already been tried.",
+    story_p4:"At almost 15 months, Lea cannot yet roll over, sit up on her own or reach for toys purposefully. But she has already achieved a lot: she can sit when we place her in position and is becoming more and more stable in supported standing. She babbles a lot and can now even eat purée with small lumps.",
+    story_p5:"Thanks to intensive therapy in Germany and Poland we see <span class='highlight'>real progress</span>: Lea can now open her hands much better, which were very tense at first. Her favourite thing is touching and pushing the toy chain that hangs from the ceiling.",
     story_btn:"See Lea's progress →",
     section_nusap1_tag:"Medical Information",
     section_nusap1_title:"What is NUSAP1?",
@@ -867,13 +952,13 @@ const T = {
     nusap1_p1:"The NUSAP1 gene contains the blueprint for a protein that plays a crucial role in cell division. It organises the spindle apparatus – a molecular scaffold ensuring chromosomes are correctly distributed to daughter cells. Without this protein, cell division goes wrong.",
     nusap1_p2:"For the developing brain of an unborn child, correct cell division is everything. Nerve cells that don't divide properly cannot build stable neural networks. The brain develops incompletely.",
     nusap1_p3:"In Lea's case, this is a <strong>de novo mutation</strong> – it existed neither in her mother nor in her father. It arose spontaneously, without a predictable cause. It strikes families with no medical history. At random.",
-    nusap1_p4:"NUSAP1 mutations are <strong>extremely rare</strong>. Fewer than 50 cases have been documented worldwide. Parents of affected children face a medical puzzle almost alone.",
-    fact1_label:"documented cases worldwide with NUSAP1 mutation (as of 2025)",
+    nusap1_p4:"NUSAP1 variants are <strong>extremely rare</strong>. When Lea was diagnosed, as far as we knew at the time, only three affected children were known worldwide. Even doctors can hardly predict how affected children will develop.",
+    fact1_label:"affected children known worldwide when Lea was diagnosed (as far as we knew at the time)",
     fact2_label:"de novo – mutation is not inherited from either parent",
     fact3_label:"no standard protocol – every treatment is individual and experimental",
-    section_epilepsy_tag:"Epilepsy in Infants",
-    section_epilepsy_title:"What a seizure does to a baby's brain",
-    section_epilepsy_intro:"Most people have never witnessed an epileptic seizure in a newborn. It is important to understand this – to grasp what Lea has been through.",
+    section_epilepsy_tag:"Epilepsy in Toddlers",
+    section_epilepsy_title:"What a seizure does to a toddler's brain",
+    section_epilepsy_intro:"Lea had her first seizures at just six weeks old. Since then, six medications and various combinations have been tried. She is cared for by specialised epilepsy centres in Hanover and Berlin – her doctors are currently assessing whether a vagus nerve stimulator could help.",
     epilepsy_p1:"Imagine an electrical storm breaking out in your head. Neurons that normally communicate in an orderly way fire all at once, uncontrollably – like a short circuit spreading through the entire brain in milliseconds. That is an epileptic seizure. For a baby whose brain is just beginning to develop, this storm is particularly devastating.",
     epilepsy_quote:"\"Lea's brain is in the most sensitive developmental phase a human being ever experiences. Every seizure during this time is not just a moment of suffering – it leaves traces that can never be erased.\"",
     epilepsy_p2:"Almost every day, Lea suffered seizures in the first months of her life. An infant's brain is plastic – it can adapt. But damage during this phase strikes particularly deep. <strong>Every seizure counts. Every prevented seizure too.</strong>",
@@ -883,19 +968,21 @@ const T = {
     impact4_title:"The Price of Control", impact4_text:"Lea's medications reduce seizures – but their side effects burden her liver, concentration, and energy every day. A necessary, difficult compromise.",
     section_progress_tag:"Lea's Journey", section_progress_title:"Every centimetre is a victory",
     section_progress_lead:"What sounds like a given is, for Lea, the result of weeks of hard work, patient therapists, and a family that never stopped believing.",
-    ms1_date:"August 2025", ms1_title:"Lea comes into the world", ms1_text:"A little girl with an unknown diagnosis. The first days show: something is wrong. The investigations begin.",
+    ms1_date:"10 August 2025", ms1_title:"Lea comes into the world", ms1_text:"A little girl with an unknown diagnosis. The first days show: something is wrong. The investigations begin.",
     ms2_date:"Autumn 2025", ms2_title:"Diagnosis: NUSAP1 gene mutation", ms2_text:"After genetic testing it becomes clear: Lea carries a de novo mutation in the NUSAP1 gene. The family faces a puzzle for which there are almost no answers.",
-    ms3_date:"Autumn – Winter 2025", ms3_title:"Almost daily epileptic seizures", ms3_text:"The hardest time. Lea suffers seizures almost every day. Her family fights by her side, night after night. Every seizure is an attack on her still-growing brain.",
+    ms3_date:"From late September 2025", ms3_title:"The first seizures", ms3_text:"At six weeks old Lea has her first epileptic seizures. In the following months they come almost every day – the hardest time for our family.",
     ms4_date:"Winter 2025/2026", ms4_title:"Medication starts to work", ms4_text:"Seizures drop to about one per week. A relative success, at the price of strong side effects.",
-    ms5_date:"Spring 2026", ms5_title:"Her hands open", ms5_text:"For a long time, Lea had only tightly closed fists. After weeks of intensive occupational therapy: Lea can open her hands and hold a toy. For us, this is a miracle.",
-    ms6_date:"Today & tomorrow", ms6_title:"We keep fighting", ms6_text:"Every therapy session, every exercise brings Lea one step further. We don't give up – because Lea doesn't give up.",
-    section_donate_tag:"Help Now", section_donate_title:"Give Lea a Chance",
-    section_donate_lead:"The therapies that help Lea progress are not fully covered by health insurance. Every donation makes a real difference.",
-    dc1_label:"One hour of occupational therapy – Lea's hands learn to grasp", dc1_btn:"Donate",
-    dc2_label:"Two therapy hours or specialised developmental equipment", dc2_btn:"Donate",
-    dc3_label:"Four hours of intensive therapy – a significant step forward", dc3_btn:"Donate",
+    ms5_date:"Spring 2026", ms5_title:"First therapy week in Poznań", ms5_text:"At the Falmed practice in Poznań we notice the first changes: Lea opens her hands more easily and her muscle tone seems more balanced.",
+    ms6_date:"Summer 2026", ms6_title:"CME/MEDEK therapy in Piła", ms6_text:"We discover CME/MEDEK therapy, developed by Ramón Cuevas, and have been travelling to Piła regularly ever since. There Lea works intensively on sitting, balance and supported standing – plus neuro-speech therapy for oral motor skills and communication.",
+    ms7_date:"August 2026", ms7_title:"Daycare – a piece of normal life", ms7_text:"Since August 2026, Lea attends a daycare in Braunschweig – with nursing support. A significant step for a little girl who fights so hard.",
+    ms8_date:"Today & tomorrow", ms8_title:"We keep fighting", ms8_text:"Lea's seizures are still frequent and unpredictable. Her doctors are assessing a vagus nerve stimulator. For 2027 we are planning four intensive therapy weeks in Poland – we don't give up, because Lea doesn't give up.",
+    section_donate_tag:"Help Now", section_donate_title:"Together for Lea's next steps",
+    section_donate_lead:"No health insurance pays for the intensive therapies in Poland – we fund them ourselves. Not because we know Lea will one day walk or talk, but because we want to give her the chance to discover her own possibilities.",
+    dc1_label:"A contribution to travel and accommodation for Lea's therapy week in Poland", dc1_btn:"Donate",
+    dc2_label:"Supports Lea's intensive CME/MEDEK therapy in Piła", dc2_btn:"Donate",
+    dc3_label:"40 donations of €100 make a whole therapy week possible", dc3_btn:"Donate",
     donate_box_title:"♥ Donate safely via PayPal",
-    donate_box_text:"Your donation goes directly to Anita Herter – Lea's family – and is used entirely for Lea's therapies.",
+    donate_box_text:"Every amount helps – whether €5, €10, €20 or €50. Your donation goes directly to Anita Herter – Lea's family – and is used entirely for Lea's therapies.",
     donate_paypal_btn:"Donate for Lea now",
     donate_paypal_note:"Recipient: <strong>Anita Herter</strong> · PayPal: A.patalas@hotmail.com<br />No PayPal account? Credit card, Apple Pay &amp; Google Pay also possible.",
     share_title:"You can also help without donating",
@@ -946,6 +1033,17 @@ const T = {
     cookie_accept:"Understood", cookie_decline:"Close"
   },
   pl: {
+    fund2_list:"<li>Intensywna terapia CME/MEDEK w Pile</li><li>Neurologopedia: motoryka jamy ustnej, żucie, komunikacja</li><li>Dojazd i nocleg w Polsce</li>",
+    fund2_title:"Płacimy sami – tu pomaga Twoja darowizna",
+    fund1_list:"<li>Fizjoterapia metodą Bobath</li><li>Ergoterapia</li><li>Wczesne wspomaganie rozwoju, dwa razy w tygodniu</li>",
+    fund1_title:"Pokrywa kasa chorych",
+    goal_note:"Do tego dochodzą dodatkowe formy wsparcia, np. terapia neurologopedyczna.",
+    goal_calc3:"cel zbiórki na 2027",
+    goal_calc2:"za tydzień z dojazdem i noclegiem",
+    goal_calc1:"turnusy terapii w Pile",
+    goal_text:"Na 2027 rok planujemy <strong>cztery intensywne turnusy terapii MEDEK</strong> w Polsce. Jeden tydzień kosztuje nas około 4000 € – razem z terapią, dojazdem i noclegiem.",
+    goal_tag:"Cel zbiórki na 2027",
+    story_p6:"Lea to dużo więcej niż jej diagnoza. Chętnie się śmieje, kocha muzykę i bajki z Tonieboxa, słucha z tatą rocka i cieszy się na widok naszego psa Tequili i kota Mojito. A gdy coś jej się nie podoba, pokazuje to bardzo wyraźnie.",
     nav_story:"Historia Lei", nav_progress:"Postępy", nav_parents:"Dla Rodziców", nav_donate:"Przekaż darowiznę ♥",
     hero_badge:"Rzadka choroba · Defekt genu NUSAP1",
     hero_title:"Lea walczy.<br /><em>Całą swoją siłą.</em>",
@@ -955,16 +1053,16 @@ const T = {
     hero_quote_by:"— Rodzina Lei",
     stat1_label:"Rok – a już<br />tyle przeżyła",
     stat2_label:"Dni walki<br />od narodzin",
-    stat3_label:"znanych przypadków na świecie –<br />NUSAP1 jest skrajnie rzadkie",
-    stat4_label:"Zabawka, którą Lea<br />dziś sama trzyma",
+    stat3_label:"znane dzieci z tą zmianą na świecie,<br />gdy Lea otrzymała diagnozę",
+    stat4_label:"Cel zbiórki na 2027 –<br />cztery turnusy terapii w Polsce",
     section_story_tag:"Historia Lei",
     section_story_title:"Małe życie, które walczy – od samego początku",
-    story_p1:"Kiedy Lea przyszła na świat w sierpniu 2025 roku, jej rodzice nie wiedzieli, przez co przyjdzie im przejść. Diagnoza spadła jak grom z jasnego nieba: <strong>mutacja de novo w genie NUSAP1</strong> – błąd, którego ani matka, ani ojciec nie noszą w swoim DNA. Mutacja, która powstała samoistnie. Przypadkowo. Bezlitośnie.",
-    story_p2:"Ten maleńki defekt uniemożliwił pełny rozwój mózgu Lei. Konsekwencje są poważne: motoryka Lei, zdolności poznawcze i cały neurologiczny rozwój postępują własną, trudną drogą.",
-    story_quote:"\u201EPrawie codziennie Lea miała napady padaczkowe. Patrzyliśmy, jak jej małe ciałko drży, a mózg jest rażony prądem – raz za razem. I nie mogliśmy nic zrobić, tylko walczyć.\u201C",
-    story_p3:"Dziś Lea otrzymuje leki, które ograniczyły napady do mniej więcej jednego na tydzień. Jednak leki te mają <strong>silne skutki uboczne</strong>, które każdego dnia obciążają jej małe ciałko.",
-    story_p4:"To, co inne dzieci robią bez wysiłku – siedzieć, chwytać, obracać się – dla Lei jest światem ciężko zdobytych centymetrów. Przez długi czas Lea nie mogła otwierać rąk. Jej piąstki pozostawały zaciśnięte. Chwytanie zabawki? Niemożliwe.",
-    story_p5:"Potem przyszły terapie. A potem: <span class='highlight'>cud</span>. Powoli jej palce się otworzyły. Dziś Lea potrafi trzymać zabawkę w dłoni. Dla nas – to wszystko.",
+    story_p1:"Lea urodziła się 10 sierpnia 2025 roku. Wkrótce potem przyszła diagnoza: <strong>zmiana w genie NUSAP1</strong> – de novo, czyli nie odziedziczona po żadnym z rodziców, lecz powstała samoistnie. Gdy otrzymaliśmy diagnozę, według naszej ówczesnej wiedzy na świecie znane były tylko trzy dzieci z tą zmianą.",
+    story_p2:"Nawet lekarze nie potrafili nam powiedzieć, jak będzie wyglądać przyszłość Lei. Neuropediatra powiedział nam wtedy, że o mówieniu i chodzeniu możemy zapomnieć. Ale nie chcemy, by o przyszłości Lei decydowała wyłącznie prognoza.",
+    story_quote:"„Napady Lei są nieprzewidywalne – raz ma ich mniej, raz znacznie więcej. Już cztery razy przeszła stan padaczkowy, za każdym razem był to nagły stan medyczny. Strach towarzyszy nam każdego dnia.”",
+    story_p3:"Pierwsze napady Lea miała w wieku sześciu tygodni. Od tamtej pory spędza dużo czasu w szpitalu – z powodu nagłych sytuacji, ustawiania leków i badań. Wypróbowano już <strong>sześć różnych leków</strong> i różne ich połączenia.",
+    story_p4:"W wieku prawie 15 miesięcy Lea nie potrafi jeszcze samodzielnie się obrócić, usiąść ani celowo sięgnąć po zabawkę. Ale już wiele osiągnęła: siedzi, gdy ją posadzimy, i jest coraz stabilniejsza podczas stania z podparciem. Dużo gaworzy, a nawet je już papkę z małymi kawałkami.",
+    story_p5:"Dzięki intensywnej terapii w Niemczech i w Polsce widzimy <span class='highlight'>prawdziwe postępy</span>: Lea coraz lepiej otwiera rączki, które na początku były mocno napięte. Najbardziej lubi dotykać i popychać łańcuch z zabawkami zawieszony pod sufitem.",
     story_btn:"Zobacz postępy Lei →",
     section_nusap1_tag:"Informacje medyczne",
     section_nusap1_title:"Czym jest NUSAP1?",
@@ -973,13 +1071,13 @@ const T = {
     nusap1_p1:"Gen NUSAP1 zawiera plan budowy białka kluczowego dla podziału komórek. Organizuje wrzeciono podziałowe – molekularne rusztowanie zapewniające prawidłowy podział chromosomów. Bez tego białka podziały komórkowe przebiegają błędnie.",
     nusap1_p2:"Dla rozwijającego się mózgu nienarodzonego dziecka prawidłowy podział komórek jest wszystkim. Neurony dzielące się nieprawidłowo nie mogą budować stabilnych sieci neuronalnych. Mózg rozwija się niepełnie.",
     nusap1_p3:"W przypadku Lei mamy do czynienia z <strong>mutacją de novo</strong> – nie istniała ani u jej matki, ani u ojca. Powstała samoistnie, bez przewidywalnej przyczyny. Dotyka rodzin bez historii choroby. Trafia przypadkowo.",
-    nusap1_p4:"Mutacje NUSAP1 są <strong>niezwykle rzadkie</strong>. Na całym świecie udokumentowano mniej niż 50 przypadków. Rodzice dotkniętych dzieci stoją niemal samotnie przed zagadką medyczną.",
-    fact1_label:"udokumentowanych przypadków na świecie (stan na 2025)",
+    nusap1_p4:"Zmiany w genie NUSAP1 są <strong>niezwykle rzadkie</strong>. Gdy Lea otrzymała diagnozę, według naszej ówczesnej wiedzy na świecie znane były tylko trzy dzieci z tą zmianą. Nawet lekarze nie potrafią przewidzieć, jak będą się rozwijać.",
+    fact1_label:"znane dzieci z tą zmianą na świecie w chwili diagnozy Lei (według ówczesnej wiedzy)",
     fact2_label:"de novo – mutacja nie pochodzi od żadnego z rodziców",
     fact3_label:"brak protokołu – każde leczenie jest indywidualne i eksperymentalne",
     section_epilepsy_tag:"Padaczka u niemowląt",
     section_epilepsy_title:"Co napad robi z mózgiem dziecka",
-    section_epilepsy_intro:"Większość ludzi nigdy nie widziała, jak wygląda napad padaczkowy u noworodka. Ważne jest, aby to rozumieć – żeby pojąć, przez co przeszła Lea.",
+    section_epilepsy_intro:"Pierwsze napady Lea miała już w wieku sześciu tygodni. Od tego czasu wypróbowano sześć leków i różne ich połączenia. Lea jest pod opieką wyspecjalizowanych ośrodków padaczki w Hanowerze i Berlinie – lekarze sprawdzają obecnie, czy pomóc może stymulator nerwu błędnego.",
     epilepsy_p1:"Wyobraź sobie, że w twojej głowie wybucha elektryczna burza. Neurony, które normalnie komunikują się w sposób uporządkowany, zaczynają strzelać jednocześnie, niekontrolowanie – jak zwarcie rozchodzące się przez cały mózg. To jest napad padaczkowy. Dla niemowlęcia, którego mózg dopiero się rozwija, ta burza jest szczególnie niszczycielska.",
     epilepsy_quote:"\u201EMózg Lei znajduje się w najbardziej wrażliwej fazie rozwoju, jaką człowiek kiedykolwiek przeżywa. Każdy napad w tym czasie to nie tylko chwila cierpienia – pozostawia ślady, których nie można już wymazać.\u201C",
     epilepsy_p2:"Prawie codziennie Lea cierpiała z powodu napadów w pierwszych miesiącach życia. Mózg niemowlęcia jest plastyczny – może się adaptować. Ale uszkodzenia w tej fazie działają szczególnie głęboko. <strong>Każdy napad się liczy. Każdy zapobiegniętemu też.</strong>",
@@ -989,19 +1087,21 @@ const T = {
     impact4_title:"Cena kontroli", impact4_text:"Leki Lei zmniejszają napady – ale ich skutki uboczne obciążają wątrobę, koncentrację i energię każdego dnia. Konieczny, trudny kompromis.",
     section_progress_tag:"Droga Lei", section_progress_title:"Każdy centymetr to zwycięstwo",
     section_progress_lead:"To, co brzmi jak oczywistość, jest dla Lei wynikiem tygodni ciężkiej pracy, cierpliwych terapeutów i rodziny, która nigdy nie przestała wierzyć.",
-    ms1_date:"Sierpień 2025", ms1_title:"Lea przychodzi na świat", ms1_text:"Mała dziewczynka z nieznaną diagnozą. Pierwsze dni pokazują: coś jest nie tak. Zaczynają się badania.",
+    ms1_date:"10 sierpnia 2025", ms1_title:"Lea przychodzi na świat", ms1_text:"Mała dziewczynka z nieznaną diagnozą. Pierwsze dni pokazują: coś jest nie tak. Zaczynają się badania.",
     ms2_date:"Jesień 2025", ms2_title:"Diagnoza: mutacja genu NUSAP1", ms2_text:"Po diagnostyce genetycznej staje się jasne: Lea nosi mutację de novo w genie NUSAP1. Rodzina stoi przed zagadką, na którą prawie nie ma odpowiedzi.",
-    ms3_date:"Jesień – Zima 2025", ms3_title:"Prawie codzienne napady padaczkowe", ms3_text:"Najtrudniejszy czas. Lea prawie codziennie doznaje napadów. Jej rodzina walczy u jej boku, noc po nocy. Każdy napad to atak na jej wciąż rosnący mózg.",
+    ms3_date:"Od końca września 2025", ms3_title:"Pierwsze napady", ms3_text:"W wieku sześciu tygodni Lea ma pierwsze napady padaczkowe. W kolejnych miesiącach pojawiają się niemal codziennie – to najtrudniejszy czas dla naszej rodziny.",
     ms4_date:"Zima 2025/2026", ms4_title:"Leczenie farmakologiczne przynosi efekty", ms4_text:"Napady zmniejszają się do ok. jednego tygodniowo. Względny sukces, wykupiony silnymi skutkami ubocznymi.",
-    ms5_date:"Wiosna 2026", ms5_title:"Rączki się otwierają", ms5_text:"Przez długi czas Lea miała tylko zaciśnięte piąstki. Po tygodniach intensywnej ergoterapii: Lea może otwierać ręce i trzymać zabawkę. Dla nas to cud.",
-    ms6_date:"Dziś i jutro", ms6_title:"Walczymy dalej", ms6_text:"Każda terapia, każde ćwiczenie przybliża Leę o kolejny krok. Nie poddajemy się – bo Lea się nie poddaje.",
-    section_donate_tag:"Pomóż teraz", section_donate_title:"Daj Lei szansę",
-    section_donate_lead:"Terapie, które pomagają Lei, nie są w pełni pokrywane przez kasę chorych. Każda darowizna robi realną różnicę.",
-    dc1_label:"Jedna godzina ergoterapii – dłonie Lei uczą się chwytać", dc1_btn:"Przekaż darowiznę",
-    dc2_label:"Dwie godziny terapii lub specjalny sprzęt wspomagający rozwój", dc2_btn:"Przekaż darowiznę",
-    dc3_label:"Cztery godziny intensywnej terapii – znaczący krok naprzód", dc3_btn:"Przekaż darowiznę",
+    ms5_date:"Wiosna 2026", ms5_title:"Pierwszy turnus terapii w Poznaniu", ms5_text:"W gabinecie Falmed w Poznaniu zauważamy pierwsze zmiany: Lea łatwiej otwiera rączki, a napięcie mięśniowe wydaje się bardziej wyrównane.",
+    ms6_date:"Lato 2026", ms6_title:"Terapia CME/MEDEK w Pile", ms6_text:"Odkrywamy terapię CME/MEDEK opracowaną przez Ramóna Cuevasa i od tej pory regularnie jeździmy do Piły. Lea intensywnie ćwiczy tam siedzenie, równowagę i stanie z podparciem. Do tego dochodzi neurologopedia – motoryka jamy ustnej i komunikacja.",
+    ms7_date:"Sierpień 2026", ms7_title:"Żłobek – kawałek normalnego życia", ms7_text:"Od sierpnia 2026 Lea chodzi do żłobka w Brunszwiku – z opieką pielęgniarki. Ważny krok dla małej dziewczynki, która tak dużo walczy.",
+    ms8_date:"Dziś i jutro", ms8_title:"Walczymy dalej", ms8_text:"Napady Lei są nadal częste i nieprzewidywalne. Lekarze sprawdzają, czy pomóc może stymulator nerwu błędnego. Na 2027 rok planujemy cztery intensywne turnusy terapii w Polsce – nie poddajemy się, bo Lea się nie poddaje.",
+    section_donate_tag:"Pomóż teraz", section_donate_title:"Razem dla kolejnych kroków Lei",
+    section_donate_lead:"Intensywnych terapii w Polsce nie pokrywa żadna kasa chorych – finansujemy je sami. Nie dlatego, że wiemy, że Lea kiedyś będzie chodzić lub mówić, ale dlatego, że chcemy dać jej szansę odkrycia własnych możliwości.",
+    dc1_label:"Wkład w dojazd i nocleg na turnus terapii Lei w Polsce", dc1_btn:"Przekaż darowiznę",
+    dc2_label:"Wspiera intensywną terapię CME/MEDEK Lei w Pile", dc2_btn:"Przekaż darowiznę",
+    dc3_label:"40 darowizn po 100 € to cały tydzień terapii", dc3_btn:"Przekaż darowiznę",
     donate_box_title:"♥ Przekaż darowiznę bezpiecznie przez PayPal",
-    donate_box_text:"Twoja darowizna trafia bezpośrednio do Anity Herter – rodziny Lei – i jest w całości przeznaczona na terapie Lei.",
+    donate_box_text:"Każda kwota pomaga – czy to 5, 10, 20 czy 50 €. Twoja darowizna trafia bezpośrednio do Anity Herter – rodziny Lei – i jest w całości przeznaczona na terapie Lei.",
     donate_paypal_btn:"Przekaż darowiznę dla Lei",
     donate_paypal_note:"Odbiorca: <strong>Anita Herter</strong> · PayPal: A.patalas@hotmail.com<br />Nie masz konta PayPal? Możliwa jest również płatność kartą, Apple Pay i Google Pay.",
     share_title:"Możesz pomóc też bez darowizny",
